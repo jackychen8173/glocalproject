@@ -1,7 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # files 
-react-d3/public/ces2021_data.json
 data/original/cdem2021rstudiocsv.csv
 data/original/cdem2019rstudioonlinedata.csv
 
