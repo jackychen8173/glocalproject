@@ -1,3 +1,9 @@
+label_mappings <- list(
+  combined_lead_int = cps21_lead_int_option_labels,
+  combined_language = cps21_language_option_labels
+)
+
+
 ui <- fluidPage(
   titlePanel("CES2021 Youth Data Explorer"),
   tabsetPanel(
@@ -24,14 +30,34 @@ ui <- fluidPage(
 
 server <- function(input, output) {
   output$barPlot <- renderPlot({
-    ggplot(ces2021_filtered_data, aes_string(x = paste0("factor(", input$variable, ")"))) +
-      geom_bar(fill = "skyblue", color = "black") +
-      labs(
-        title = paste("Canadian", input$variable, "in CES2021"),
-        x = input$variable,
-        y = "Count"
-      ) +
-      theme_minimal()
+    var <- input$variable
+    
+    if (var %in% names(label_mappings)) {
+      labels <- label_mappings[[var]]
+      
+      plot_data <- data.frame(label = unlist(strsplit(ces2021_filtered_data[[var]], ",\\s*"))) %>%
+        dplyr::count(label)
+      
+      plot_data$label <- factor(plot_data$label, levels = labels)
+      
+      ggplot(plot_data, aes(x = label, y = n)) +
+        geom_bar(stat = "identity", fill = "skyblue", color = "black") +
+        labs(
+          title = paste("Breakdown of", var),
+          x = "Option",
+          y = "Count"
+        ) +
+        theme_minimal()
+    } else {
+      ggplot(ces2021_filtered_data, aes_string(x = paste0("factor(", input$variable, ")"))) +
+        geom_bar(fill = "skyblue", color = "black") +
+        labs(
+          title = paste("Age 18–29", input$variable, "in CES2021"),
+          x = input$variable,
+          y = "Count"
+        ) +
+        theme_minimal()
+    }
   })
   
   output$dataTable <- DT::renderDataTable({
