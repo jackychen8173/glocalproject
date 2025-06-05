@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46c847b1b715a27454f3bcf4501d8c69488df4a5ea060b588f295c19b6ccb77f
-size 615
+{
+  "files": {
+    "main.css": "/glocalproject/static/css/main.f855e6bc.css",
+    "main.js": "/glocalproject/static/js/main.04c2ddc9.js",
+    "static/js/453.d1ab54de.chunk.js": "/glocalproject/static/js/453.d1ab54de.chunk.js",
+    "index.html": "/glocalproject/index.html",
+    "main.f855e6bc.css.map": "/glocalproject/static/css/main.f855e6bc.css.map",
+    "main.04c2ddc9.js.map": "/glocalproject/static/js/main.04c2ddc9.js.map",
+    "453.d1ab54de.chunk.js.map": "/glocalproject/static/js/453.d1ab54de.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.04c2ddc9.js"
+  ]
+}
