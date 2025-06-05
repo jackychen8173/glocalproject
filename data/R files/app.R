@@ -38,7 +38,7 @@ server <- function(input, output) {
       plot_data <- data.frame(label = unlist(strsplit(ces2021_filtered_data[[var]], ",\\s*"))) %>%
         dplyr::count(label)
       
-      plot_data$label <- factor(plot_data$label, levels = labels)
+      plot_data$label <- factor(plot_data$label, levels = unname(labels))
       
       ggplot(plot_data, aes(x = label, y = n)) +
         geom_bar(stat = "identity", fill = "skyblue", color = "black") +
