@@ -9,7 +9,7 @@ function CES2021() {
   const [selectedVariable, setSelectedVariable] = useState("pes21_turnout2021");
 
   useEffect(() => {
-    fetch("./ces2021_data.json")
+    fetch("/ces2021data.json")
       .then((response) => response.json())
       .then((json) => setData(json));
   }, []);
