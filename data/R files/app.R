@@ -1,7 +1,4 @@
-label_mappings <- list(
-  combined_lead_int = cps21_lead_int_option_labels,
-  combined_language = cps21_language_option_labels
-)
+
 
 
 ui <- fluidPage(
@@ -32,8 +29,9 @@ server <- function(input, output) {
   output$barPlot <- renderPlot({
     var <- input$variable
     
-    if (var %in% names(label_mappings)) {
-      labels <- label_mappings[[var]]
+    if (var %in% names(label_dict)) {
+      labels <- label_dict[[var]]
+      print(labels)
       
       plot_data <- data.frame(label = unlist(strsplit(ces2021_filtered_data[[var]], ",\\s*"))) %>%
         dplyr::count(label)
