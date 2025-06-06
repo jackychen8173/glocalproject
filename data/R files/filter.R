@@ -64,6 +64,7 @@ ces2021_filtered_data <- combine_multiselect(
 )
 
 
+
 library(jsonlite)
 write_json(ces2021_filtered_data, 
            "C:/Users/jchen/YouthEmploymentEducationProject/react-d3/public/ces2021_data.json", pretty = TRUE)

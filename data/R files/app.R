@@ -20,7 +20,7 @@ ui <- fluidPage(
                mainPanel(
                  plotOutput("barPlot")
                )
-             )
+             )     
     ),
     tabPanel("Data Table",
              DT::dataTableOutput("dataTable")
