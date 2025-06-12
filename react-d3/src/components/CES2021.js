@@ -2,63 +2,12 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import Plot from "react-plotly.js";
 
-// Label mappings for multiselect variables
-const labelMappings = {
-  combined_lead_int: [
-    "Justin Trudeau",
-    "Erin O'Toole",
-    "Jagmeet Singh",
-    "Yves-François Blanchet",
-    "Annamie Paul",
-    "None of these",
-    "Don't know/ Prefer not to answer",
-  ],
-  combined_language: [
-    "English",
-    "French",
-    "Indigenous language",
-    "Arabic",
-    "Chinese / Cantonese / Mandarin",
-    "Filipino / Tagalog ",
-    "German",
-    "Indian / Hindi / Gujarati",
-    "Italian",
-    "Korean",
-    "Pakistani / Punjabi / Urdu",
-    "Persian, Farsi",
-    "Russian",
-    "Spanish",
-    "Tamil",
-    "Vietnamese",
-    "Other",
-    "Don't Know/Prefer not to answer",
-  ],
-};
-
-// Helper function to get ordered counts for multi-select fields
-function getOrderedCounts(values, orderedLabels) {
-  const counts = Object.fromEntries(orderedLabels.map((label) => [label, 0]));
-
-  values.forEach((val) => {
-    if (!val) return;
-    val.split(",").map((v) => v.trim()).forEach((entry) => {
-      if (counts.hasOwnProperty(entry)) {
-        counts[entry]++;
-      } else {
-        counts[entry] = 1; // Just in case there's something unexpected
-      }
-    });
-  });
-
-  return counts;
-}
-
 function CES2021() {
   const [data, setData] = useState([]);
-  const [selectedVariable, setSelectedVariable] = useState("pes21_turnout2021");
+  const [selectedVariable, setSelectedVariable] = useState(null);
 
   useEffect(() => {
-    fetch("./ces2021data.json")
+    fetch("./ces2021_data.json")
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((err) => console.error("Failed to load JSON:", err));
@@ -74,28 +23,44 @@ function CES2021() {
 
   let plotData;
 
-  if (labelMappings.hasOwnProperty(selectedVariable)) {
-    const counts = getOrderedCounts(
-      data.map((row) => row[selectedVariable]),
-      labelMappings[selectedVariable]
-    );
+  if (data.length > 0) {
+    const values = data.map((row) => row[selectedVariable]).filter(Boolean);
+    const isMultiSelect = selectedVariable && selectedVariable.startsWith("combined_");
 
-    plotData = {
-      x: Object.keys(counts),
-      y: Object.values(counts),
-      type: "bar",
-      marker: { color: "skyblue" },
-    };
-  } else {
     const counts = {};
-    data.forEach((row) => {
-      const val = row[selectedVariable] || "NA";
-      counts[val] = (counts[val] || 0) + 1;
+
+    if (isMultiSelect) {
+      values.forEach((val) => {
+        val
+          .split(",")
+          .map((v) => v.trim())
+          .forEach((entry) => {
+            counts[entry] = (counts[entry] || 0) + 1;
+          });
+      });
+    } else {
+      values.forEach((val) => {
+        const key = val || "NA";
+        counts[key] = (counts[key] || 0) + 1;
+      });
+    }
+
+    // Convert counts object into sorted entries based on numeric prefix
+    const sortedEntries = Object.entries(counts).sort((a, b) => {
+      const numA = parseInt(a[0]);
+      const numB = parseInt(b[0]);
+      return numA - numB;
     });
 
+    const labels = sortedEntries.map(([key]) => {
+      const parts = key.split(": ");
+      return parts.length > 1 ? parts.slice(1).join(": ") : key; // Removes the number
+    });
+    const sortedCounts = sortedEntries.map(([_, count]) => count);
+
     plotData = {
-      x: Object.keys(counts),
-      y: Object.values(counts),
+      x: labels,
+      y: sortedCounts,
       type: "bar",
       marker: { color: "skyblue" },
     };
@@ -113,15 +78,17 @@ function CES2021() {
         />
       </div>
 
-      <Plot
-        data={[plotData]}
-        layout={{
-          title: `18–29 ${selectedVariable} in CES2021`,
-          xaxis: { title: selectedVariable },
-          yaxis: { title: "Count" },
-          margin: { t: 40, b: 120 },
-        }}
-      />
+      {plotData && (
+        <Plot
+          data={[plotData]}
+          layout={{
+            title: `18–29 ${selectedVariable} in CES2021`,
+            xaxis: { title: selectedVariable },
+            yaxis: { title: "Count" },
+            margin: { t: 40, b: 120 },
+          }}
+        />
+      )}
     </div>
   );
 }
