@@ -7,24 +7,14 @@ ces2021dtafile <- read_dta("C:/Users/jchen/Downloads/dataverse_files/2021 Canadi
 # filter from dta file
 ces2021_filtered_dta <- ces2021dtafile %>% filter(cps21_age < 30)
 ces2021_filtered_dta <- ces2021_filtered_dta %>%
-  select(cps21_age, where(~ n_distinct(.) <= 10 & n_distinct(.) > 1)) %>%
+  select(cps21_age, cps21_province, where(~ n_distinct(.) <= 10 & n_distinct(.) > 1)) %>%
   select(-matches("DO"), -matches("quality"), -matches("TEXT"), -matches("captcha"), 
          -matches("pccf"), -matches("PCCF"), -matches("Click_Count"),
          -matches("survey"), -matches("flag"), -matches("wave"), -matches("govt_programs_word"),
-         -matches("pes21_inattentive"), -matches("message"))   
-
-# Collect all label mappings before conversion
-label_maps <- list()
-
-for (col in names(ces2021_filtered_dta)) {
-  if (is.labelled(ces2021_filtered_dta[[col]])) {
-    labels <- attr(ces2021_filtered_dta[[col]], "labels")
-    label_maps[[col]] <- as.list(setNames(names(labels), as.character(labels)))
-  }
-}
-
-write_json(label_maps, "C:/Users/jchen/YouthEmploymentEducationProject/react-d3/public/ces2021_label_map.json", pretty = TRUE)
-
+         -matches("pes21_inattentive"), -matches("message"), -matches("Positionstatements_medicaltreatm"),
+         -matches("split_partyissue_namegen"), -matches("split"), -matches("justice_law_fr"))   
+ces2021_filtered_dta <- ces2021_filtered_dta %>%
+  mutate(across(everything(), ~ replace(., . == -99, NA)))
 
 library(dplyr)
 library(stringr)
