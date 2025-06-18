@@ -2,33 +2,8 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import Plot from "react-plotly.js";
 
-// function getLongestParenthesesContent(str) {
-//   const matches = [];
-//   let stack = [];
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i] === "(") {
-//       stack.push(i);
-//     } else if (str[i] === ")" && stack.length > 0) {
-//       const start = stack.pop();
-//       matches.push(str.slice(start + 1, i));
-//     }
-//   }
 
-//   if (matches.length === 0) return str;
-
-//   // return the longest one
-//   return matches.reduce((a, b) => (a.length > b.length ? a : b));
-// }
-
-// const variableOptions =
-//   data.length > 0
-//     ? Object.keys(data[0]).map((key) => {
-//         const label = getLongestParenthesesContent(key); // Extract longest (...)
-//         return { value: key, label, fullLabel: key };
-//       })
-//     : [];
-
-function CES2021() {
+function CES2021V3({ variableLabels }) {
   const [data, setData] = useState([]);
   const [selectedVariable, setSelectedVariable] = useState(null);
 
@@ -43,7 +18,7 @@ function CES2021() {
     data.length > 0
       ? Object.keys(data[0]).map((key) => ({
           value: key,
-          label: key,
+          label: variableLabels && variableLabels[key] ? variableLabels[key] : key,
         }))
       : [];
 
@@ -63,8 +38,13 @@ function CES2021() {
 
   if (data.length > 0 && selectedVariable) {
     const values = data.map((row) => row[selectedVariable]).filter(Boolean);
-    const isMultiSelect =
-      selectedVariable && selectedVariable.startsWith("combined_");
+
+    // Check if the variable label contains "select all that apply" (case insensitive)
+    const varLabel = variableLabels && variableLabels[selectedVariable]
+      ? variableLabels[selectedVariable].toLowerCase()
+      : "";
+
+    const isMultiSelect = varLabel.includes("select all that apply");
 
     const counts = {};
 
@@ -84,8 +64,11 @@ function CES2021() {
       });
     }
 
-    // Convert counts object into sorted entries based on numeric prefix
-    const sortedEntries = Object.entries(counts).sort((a, b) => {
+    // Filter out categories with count > 20
+    const filteredEntries = Object.entries(counts).filter(([_, count]) => count <= 20);
+
+    // Sort filtered entries by numeric prefix or alphabetically
+    const sortedEntries = filteredEntries.sort((a, b) => {
       const numA = parseInt(a[0]);
       const numB = parseInt(b[0]);
       return isNaN(numA) || isNaN(numB)
@@ -95,8 +78,9 @@ function CES2021() {
 
     const labels = sortedEntries.map(([key]) => {
       const parts = key.split(": ");
-      return parts.length > 1 ? parts.slice(1).join(": ") : key; // Removes the number
+      return parts.length > 1 ? parts.slice(1).join(": ") : key; // Removes the number prefix if present
     });
+
     const sortedCounts = sortedEntries.map(([_, count]) => count);
 
     plotData = {
@@ -107,8 +91,8 @@ function CES2021() {
     };
 
     plotLayout = {
-      title: `Responses for: ${selectedVariable}`,
-      xaxis: { title: selectedVariable, tickangle: -45 },
+      title: `Responses for: ${variableLabels && variableLabels[selectedVariable] ? variableLabels[selectedVariable] : selectedVariable}`,
+      xaxis: { title: variableLabels && variableLabels[selectedVariable] ? variableLabels[selectedVariable] : selectedVariable, tickangle: -45 },
       yaxis: { title: "Count" },
       margin: { t: 60, b: 140 },
     };
@@ -123,7 +107,7 @@ function CES2021() {
           options={variableOptions}
           defaultValue={
             selectedVariable
-              ? { value: selectedVariable, label: selectedVariable }
+              ? { value: selectedVariable, label: variableLabels && variableLabels[selectedVariable] ? variableLabels[selectedVariable] : selectedVariable }
               : null
           }
           onChange={(option) => setSelectedVariable(option.value)}
@@ -135,4 +119,4 @@ function CES2021() {
   );
 }
 
-export default CES2021;
+export default CES2021V3;
