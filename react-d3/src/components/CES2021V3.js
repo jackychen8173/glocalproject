@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import Plot from "react-plotly.js";
 
-
-function CES2021V3({ variableLabels }) {
+function CES2021() {
   const [data, setData] = useState([]);
   const [selectedVariable, setSelectedVariable] = useState(null);
 
@@ -16,11 +15,33 @@ function CES2021V3({ variableLabels }) {
 
   const variableOptions =
     data.length > 0
-      ? Object.keys(data[0]).map((key) => ({
+    ? Object.keys(data[0])
+        .filter((key) => {
+          const values = data.map((row) => row[key]).filter(Boolean);
+          const isMultiSelect = key.includes("Select all that apply");
+
+          const uniqueEntries = new Set();
+
+          if (isMultiSelect) {
+            values.forEach((val) => {
+              val
+                .split(",")
+                .map((v) => v.trim())
+                .forEach((entry) => uniqueEntries.add(entry));
+            });
+          } else {
+            values.forEach((val) => {
+              uniqueEntries.add(val);
+            });
+          }
+
+          return uniqueEntries.size <= 20;
+        })
+        .map((key) => ({
           value: key,
-          label: variableLabels && variableLabels[key] ? variableLabels[key] : key,
+          label: key,
         }))
-      : [];
+    : [];
 
   let plotData = {
     x: [],
@@ -38,13 +59,8 @@ function CES2021V3({ variableLabels }) {
 
   if (data.length > 0 && selectedVariable) {
     const values = data.map((row) => row[selectedVariable]).filter(Boolean);
-
-    // Check if the variable label contains "select all that apply" (case insensitive)
-    const varLabel = variableLabels && variableLabels[selectedVariable]
-      ? variableLabels[selectedVariable].toLowerCase()
-      : "";
-
-    const isMultiSelect = varLabel.includes("select all that apply");
+    const isMultiSelect =
+      selectedVariable && selectedVariable.includes("Select all that apply");
 
     const counts = {};
 
@@ -64,11 +80,8 @@ function CES2021V3({ variableLabels }) {
       });
     }
 
-    // Filter out categories with count > 20
-    const filteredEntries = Object.entries(counts).filter(([_, count]) => count <= 20);
-
-    // Sort filtered entries by numeric prefix or alphabetically
-    const sortedEntries = filteredEntries.sort((a, b) => {
+    // Convert counts object into sorted entries based on numeric prefix
+    const sortedEntries = Object.entries(counts).sort((a, b) => {
       const numA = parseInt(a[0]);
       const numB = parseInt(b[0]);
       return isNaN(numA) || isNaN(numB)
@@ -78,9 +91,8 @@ function CES2021V3({ variableLabels }) {
 
     const labels = sortedEntries.map(([key]) => {
       const parts = key.split(": ");
-      return parts.length > 1 ? parts.slice(1).join(": ") : key; // Removes the number prefix if present
+      return parts.length > 1 ? parts.slice(1).join(": ") : key; // Removes the number
     });
-
     const sortedCounts = sortedEntries.map(([_, count]) => count);
 
     plotData = {
@@ -91,8 +103,8 @@ function CES2021V3({ variableLabels }) {
     };
 
     plotLayout = {
-      title: `Responses for: ${variableLabels && variableLabels[selectedVariable] ? variableLabels[selectedVariable] : selectedVariable}`,
-      xaxis: { title: variableLabels && variableLabels[selectedVariable] ? variableLabels[selectedVariable] : selectedVariable, tickangle: -45 },
+      title: `Responses for: ${selectedVariable}`,
+      xaxis: { title: selectedVariable, tickangle: -45 },
       yaxis: { title: "Count" },
       margin: { t: 60, b: 140 },
     };
@@ -107,7 +119,7 @@ function CES2021V3({ variableLabels }) {
           options={variableOptions}
           defaultValue={
             selectedVariable
-              ? { value: selectedVariable, label: variableLabels && variableLabels[selectedVariable] ? variableLabels[selectedVariable] : selectedVariable }
+              ? { value: selectedVariable, label: selectedVariable }
               : null
           }
           onChange={(option) => setSelectedVariable(option.value)}
@@ -119,4 +131,4 @@ function CES2021V3({ variableLabels }) {
   );
 }
 
-export default CES2021V3;
+export default CES2021;

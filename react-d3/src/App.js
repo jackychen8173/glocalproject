@@ -1,16 +1,23 @@
 import React from "react";
-import CES2021 from "./components/CES2021";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import CESDataExplorer from "./components/CESDataExplorer";
-import CES2021V3 from "./components/CES2021V3";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./pages/Home";
+import CESDatasets from "./pages/CESDatasets";
+import Employment from "./pages/Employment";
+import CESDatasetsAnalysis from "./pages/CESDatasetsAnalysis"; 
 
-const App = () => (
-  <div className="app-container">
-    <Header />
-    <CES2021 />
-    <Footer />
-  </div>
-);
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/employment" element={<Employment />} />
+        <Route path="/cesdatasetsanalysis" element={<CESDatasetsAnalysis />} />
+        <Route path="/cesdatasets" element={<CESDatasets />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
