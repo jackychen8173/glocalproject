@@ -1,18 +1,25 @@
 library(haven)
+library(tidyverse)
 ces2019online_dtafile <- read_dta("C:/Users/jchen/Downloads/dataverse_files (2)/2019 Canadian Election Study - Online Survey v1.0.dta")
 
-# filter from dta file
-ces2019online_filtered_dta <- ces2019online_dtafile %>% filter(cps19_age < 30)
-ces2019online_filtered_dta <- ces2019online_filtered_dta %>%
-  select(cps19_age, cps19_province, where(~ n_distinct(.) <= 10 & n_distinct(.) > 1)) %>%
-  select(-matches("DO"), -matches("quality"), -matches("TEXT"), -matches("captcha"), 
-         -matches("pccf"), -matches("PCCF"), -matches("Click_Count"),
-         -matches("survey"), -matches("flag"), -matches("wave"), -matches("govt_programs_word"),
-         -matches("pes21_inattentive"), -matches("message"), -matches("Positionstatements_medicaltreatm"),
-         -matches("split_partyissue_namegen"), -matches("split"), -matches("justice_law_fr"),
-         -matches("consent"), -matches("inattentive"))    
-
 library(dplyr)
+
+ces2019online_filtered_dta <- ces2019online_dtafile %>% 
+  filter(cps19_age < 30) %>%
+  # Keep cps19_age and only variables with <=20 and >1 distinct values
+  select(cps19_age, where(~ n_distinct(.) <= 20 & n_distinct(.) > 1)) %>%
+  # Keep only columns that start with "cps19" or "pes19"
+  select(matches("^cps19|^pes19")) %>%
+  # Remove unwanted patterns
+  select(
+    -matches("DO"), -matches("quality"), -matches("TEXT"), -matches("captcha"), 
+    -matches("pccf"), -matches("PCCF"), -matches("Click_Count"),
+    -matches("survey"), -matches("flag"), -matches("wave"), -matches("govt_programs_word"),
+    -matches("pes21_inattentive"), -matches("message"), -matches("Positionstatements_medicaltreatm"),
+    -matches("split_partyissue_namegen"), -matches("split"), -matches("justice_law_fr"),
+    -matches("consent"), -matches("inattentive")
+  )   
+
 library(stringr)
 
 # 1. Identify all multi-select columns

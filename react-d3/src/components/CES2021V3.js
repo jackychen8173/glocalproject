@@ -2,7 +2,26 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import Plot from "react-plotly.js";
 
-function CES2021() {
+// Utility: wrap long text with <br> every maxLineLength characters
+function wrapText(text, maxLineLength = 50) {
+  const words = text.split(" ");
+  const lines = [];
+  let currentLine = "";
+
+  words.forEach((word) => {
+    if ((currentLine + " " + word).trim().length > maxLineLength) {
+      lines.push(currentLine.trim());
+      currentLine = word;
+    } else {
+      currentLine += " " + word;
+    }
+  });
+
+  lines.push(currentLine.trim());
+  return lines.join("<br>");
+}
+
+function CES2021V3() {
   const [data, setData] = useState([]);
   const [selectedVariable, setSelectedVariable] = useState(null);
 
@@ -13,36 +32,32 @@ function CES2021() {
       .catch((err) => console.error("Failed to load JSON:", err));
   }, []);
 
+  // Create select options for variables with <= 20 unique values
   const variableOptions =
     data.length > 0
-    ? Object.keys(data[0])
-        .filter((key) => {
-          const values = data.map((row) => row[key]).filter(Boolean);
-          const isMultiSelect = key.includes("Select all that apply");
+      ? Object.keys(data[0])
+          .filter((key) => {
+            const values = data.map((row) => row[key]).filter(Boolean);
+            const isMultiSelect = key.includes("Select all that apply");
+            const uniqueEntries = new Set();
 
-          const uniqueEntries = new Set();
+            if (isMultiSelect) {
+              values.forEach((val) =>
+                val
+                  .split(",")
+                  .map((v) => v.trim())
+                  .forEach((entry) => uniqueEntries.add(entry))
+              );
+            } else {
+              values.forEach((val) => uniqueEntries.add(val));
+            }
 
-          if (isMultiSelect) {
-            values.forEach((val) => {
-              val
-                .split(",")
-                .map((v) => v.trim())
-                .forEach((entry) => uniqueEntries.add(entry));
-            });
-          } else {
-            values.forEach((val) => {
-              uniqueEntries.add(val);
-            });
-          }
+            return uniqueEntries.size <= 20;
+          })
+          .map((key) => ({ value: key, label: key }))
+      : [];
 
-          return uniqueEntries.size <= 20;
-        })
-        .map((key) => ({
-          value: key,
-          label: key,
-        }))
-    : [];
-
+  // Initialize empty plot
   let plotData = {
     x: [],
     y: [],
@@ -57,22 +72,22 @@ function CES2021() {
     margin: { t: 60, b: 140 },
   };
 
+  // Populate plot data if a variable is selected
   if (data.length > 0 && selectedVariable) {
     const values = data.map((row) => row[selectedVariable]).filter(Boolean);
-    const isMultiSelect =
-      selectedVariable && selectedVariable.includes("Select all that apply");
+    const isMultiSelect = selectedVariable.includes("Select all that apply");
 
     const counts = {};
 
     if (isMultiSelect) {
-      values.forEach((val) => {
+      values.forEach((val) =>
         val
           .split(",")
           .map((v) => v.trim())
           .forEach((entry) => {
             counts[entry] = (counts[entry] || 0) + 1;
-          });
-      });
+          })
+      );
     } else {
       values.forEach((val) => {
         const key = val || "NA";
@@ -80,7 +95,7 @@ function CES2021() {
       });
     }
 
-    // Convert counts object into sorted entries based on numeric prefix
+    // Sort entries by numeric prefix if applicable
     const sortedEntries = Object.entries(counts).sort((a, b) => {
       const numA = parseInt(a[0]);
       const numB = parseInt(b[0]);
@@ -91,7 +106,7 @@ function CES2021() {
 
     const labels = sortedEntries.map(([key]) => {
       const parts = key.split(": ");
-      return parts.length > 1 ? parts.slice(1).join(": ") : key; // Removes the number
+      return parts.length > 1 ? parts.slice(1).join(": ") : key;
     });
     const sortedCounts = sortedEntries.map(([_, count]) => count);
 
@@ -103,10 +118,34 @@ function CES2021() {
     };
 
     plotLayout = {
-      title: `Responses for: ${selectedVariable}`,
-      xaxis: { title: selectedVariable, tickangle: -45 },
-      yaxis: { title: "Count" },
-      margin: { t: 60, b: 140 },
+      title: {
+        text: `Survey Question:<br>${wrapText(selectedVariable)}`,
+        font: { color: "#333" },
+        automargin: true,
+        x: 0.5,
+        xanchor: "center",
+        pad: { t: 20 },
+      },
+      xaxis: {
+        tickangle: -45,
+        automargin: true,
+      },
+      yaxis: {
+        title: {
+          text: "Number of People",
+          font: { color: "#333" },
+        },
+        automargin: true,
+      },
+      margin: {
+        t: 140,
+        b: 140,
+        l: 80,
+        r: 50,
+      },
+      width: 1000,
+      height: 600,
+      autosize: false,
     };
   }
 
@@ -117,7 +156,7 @@ function CES2021() {
       <div className="select-container">
         <Select
           options={variableOptions}
-          defaultValue={
+          value={
             selectedVariable
               ? { value: selectedVariable, label: selectedVariable }
               : null
@@ -126,9 +165,15 @@ function CES2021() {
         />
       </div>
 
-      <Plot data={[plotData]} layout={plotLayout} />
+      <div className="plot-container">
+        <Plot
+          data={[plotData]}
+          layout={plotLayout}
+          config={{ displayModeBar: false }}
+        />
+      </div>
     </div>
   );
 }
 
-export default CES2021;
+export default CES2021V3;

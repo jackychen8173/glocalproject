@@ -2,31 +2,24 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import Plot from "react-plotly.js";
 
-// function getLongestParenthesesContent(str) {
-//   const matches = [];
-//   let stack = [];
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i] === "(") {
-//       stack.push(i);
-//     } else if (str[i] === ")" && stack.length > 0) {
-//       const start = stack.pop();
-//       matches.push(str.slice(start + 1, i));
-//     }
-//   }
+// Utility to wrap long titles
+function wrapText(text, maxLineLength = 50) {
+  const words = text.split(" ");
+  const lines = [];
+  let currentLine = "";
 
-//   if (matches.length === 0) return str;
+  words.forEach((word) => {
+    if ((currentLine + " " + word).trim().length > maxLineLength) {
+      lines.push(currentLine.trim());
+      currentLine = word;
+    } else {
+      currentLine += " " + word;
+    }
+  });
 
-//   // return the longest one
-//   return matches.reduce((a, b) => (a.length > b.length ? a : b));
-// }
-
-// const variableOptions =
-//   data.length > 0
-//     ? Object.keys(data[0]).map((key) => {
-//         const label = getLongestParenthesesContent(key); // Extract longest (...)
-//         return { value: key, label, fullLabel: key };
-//       })
-//     : [];
+  lines.push(currentLine.trim());
+  return lines.join("<br>");
+}
 
 function CES2019Online() {
   const [data, setData] = useState([]);
@@ -63,20 +56,19 @@ function CES2019Online() {
 
   if (data.length > 0 && selectedVariable) {
     const values = data.map((row) => row[selectedVariable]).filter(Boolean);
-    const isMultiSelect =
-      selectedVariable && selectedVariable.startsWith("combined_");
+    const isMultiSelect = selectedVariable.startsWith("combined_");
 
     const counts = {};
 
     if (isMultiSelect) {
-      values.forEach((val) => {
+      values.forEach((val) =>
         val
           .split(",")
           .map((v) => v.trim())
           .forEach((entry) => {
             counts[entry] = (counts[entry] || 0) + 1;
-          });
-      });
+          })
+      );
     } else {
       values.forEach((val) => {
         const key = val || "NA";
@@ -84,7 +76,6 @@ function CES2019Online() {
       });
     }
 
-    // Convert counts object into sorted entries based on numeric prefix
     const sortedEntries = Object.entries(counts).sort((a, b) => {
       const numA = parseInt(a[0]);
       const numB = parseInt(b[0]);
@@ -95,7 +86,7 @@ function CES2019Online() {
 
     const labels = sortedEntries.map(([key]) => {
       const parts = key.split(": ");
-      return parts.length > 1 ? parts.slice(1).join(": ") : key; // Removes the number
+      return parts.length > 1 ? parts.slice(1).join(": ") : key;
     });
     const sortedCounts = sortedEntries.map(([_, count]) => count);
 
@@ -107,10 +98,34 @@ function CES2019Online() {
     };
 
     plotLayout = {
-      title: `Responses for: ${selectedVariable}`,
-      xaxis: { title: selectedVariable, tickangle: -45 },
-      yaxis: { title: "Count" },
-      margin: { t: 60, b: 140 },
+      title: {
+        text: `Responses for:<br>${wrapText(selectedVariable)}`,
+        font: { color: "#333", size: 18 },
+        automargin: true,
+        x: 0.5,
+        xanchor: "center",
+        pad: { t: 20 },
+      },
+      xaxis: {
+        tickangle: -45,
+        automargin: true,
+      },
+      yaxis: {
+        title: {
+          text: "Count",
+          font: { color: "#333" },
+        },
+        automargin: true,
+      },
+      margin: {
+        t: 180,
+        b: 140,
+        l: 80,
+        r: 50,
+      },
+      width: 1000,
+      height: 600,
+      autosize: false,
     };
   }
 
@@ -121,7 +136,7 @@ function CES2019Online() {
       <div className="select-container">
         <Select
           options={variableOptions}
-          defaultValue={
+          value={
             selectedVariable
               ? { value: selectedVariable, label: selectedVariable }
               : null
@@ -130,7 +145,13 @@ function CES2019Online() {
         />
       </div>
 
-      <Plot data={[plotData]} layout={plotLayout} />
+      <div className="plot-container">
+        <Plot
+          data={[plotData]}
+          layout={plotLayout}
+          config={{ displayModeBar: false }}
+        />
+      </div>
     </div>
   );
 }
