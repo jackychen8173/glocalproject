@@ -121,21 +121,21 @@ function CES2021V3() {
       title: {
         text: `Survey Question:<br>${wrapText(selectedVariable)}`,
         font: { color: "#333" },
-        automargin: true,
+        automargin: false,
         x: 0.5,
         xanchor: "center",
         pad: { t: 20 },
       },
       xaxis: {
         tickangle: -45,
-        automargin: true,
+        automargin: false,
       },
       yaxis: {
         title: {
           text: "Number of People",
           font: { color: "#333" },
         },
-        automargin: true,
+        automargin: false,
       },
       margin: {
         t: 140,
