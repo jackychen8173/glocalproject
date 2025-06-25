@@ -18,28 +18,44 @@ function LabourChartsMonthly() {
   const renderChart = (title, metric, unit, color, yRange) => {
     const metricData = filterByMetric(metric);
     return (
-      <Plot
-        key={metric}
-        data={[
-          {
-            x: metricData.map((d) => d.age),
-            y: metricData.map((d) => d.value),
-            type: "bar",
-            text: metricData.map((d) =>
-              unit === "%" ? `${d.value.toFixed(1)}%` : `${d.value.toFixed(1)}K`
-            ),
-            textposition: "outside",
-            marker: { color },
-          },
-        ]}
-        layout={{
-          title,
-          xaxis: { title: "Age Group" },
-          yaxis: { title: unit, range: yRange },
-          margin: { t: 60, b: 60 },
-          height: 350,
-        }}
-      />
+      <div
+        key={metric}tyle={{ maxWidth: "400px", margin: "0" }}>
+        <Plot
+          data={[
+            {
+              x: metricData.map((d) => d.age),
+              y: metricData.map((d) => d.value),
+              type: "bar",
+              text: metricData.map((d) =>
+                unit === "%"
+                  ? `${d.value.toFixed(1)}%`
+                  : `${d.value.toFixed(1)}K`
+              ),
+              textposition: "outside",
+              marker: { color },
+            },
+          ]}
+          layout={{
+            title: {
+              text: title,
+              font: { color: "#333" },
+            },
+            xaxis: {
+              title: {
+                text: "Age Group",
+                font: { color: "#333" },
+              },
+            },
+            yaxis: {
+              title: { text: unit, font: { color: "#333" } },
+              range: yRange,
+            },
+            margin: { t: 30, b: 40, l: 40, r: 20 },
+            height: 400,
+          }}
+          config={{ displayModeBar: false }}
+        />
+      </div>
     );
   };
 
@@ -49,15 +65,17 @@ function LabourChartsMonthly() {
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         gap: "2rem",
-        padding: "2rem",
-        justifyItems: "center",
+        padding: "1rem",
+        justifyContent: "center",
+        margin: "50px 0 0 0"
       }}
     >
       {renderChart(
         "Population by Age Group",
         "Population",
         "Thousands",
-        "cornflowerblue"
+        "cornflowerblue",
+        [0, 20000]
       )}
       {renderChart(
         "Employment Rate by Age Group",
@@ -81,6 +99,7 @@ function LabourChartsMonthly() {
         [0, 100]
       )}
     </div>
+    
   );
 }
 

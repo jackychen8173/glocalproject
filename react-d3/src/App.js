@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./pages/Home";
 import CESDatasets from "./pages/CESDatasets";
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/glocalproject" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/employment" element={<Employment />} />
           <Route path="/education" element={<Education />} />
           <Route

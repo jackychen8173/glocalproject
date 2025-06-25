@@ -52,6 +52,8 @@ function CES2019Online() {
     xaxis: { title: "", tickangle: -45 },
     yaxis: { title: "Count" },
     margin: { t: 60, b: 140 },
+    width: 1000,
+    height: 600,
   };
 
   if (data.length > 0 && selectedVariable) {

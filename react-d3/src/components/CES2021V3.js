@@ -70,6 +70,8 @@ function CES2021V3() {
     xaxis: { title: "", tickangle: -45 },
     yaxis: { title: "Count" },
     margin: { t: 60, b: 140 },
+    width: 1000,
+    height: 600,
   };
 
   // Populate plot data if a variable is selected

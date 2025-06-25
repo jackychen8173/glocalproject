@@ -89,7 +89,7 @@ function Home() {
       {/* Challenges */}
       <section>
         <h2>Challenges Faced</h2>
-        <p>When looking at the CES2021 dataset, the challenges I faced included:
+        <p>The challenges I faced included:
         </p>
         <ul>
           <li>

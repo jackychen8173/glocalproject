@@ -7,7 +7,7 @@ function Navbar() {
     <nav className="navbar">
       <h2 className="logo"></h2>
       <ul className="nav-links">
-        <li><Link to="/glocalproject">Home</Link></li>
+        <li><Link to="/">Home</Link></li>
         <li><Link to="/cesdatasets">View CES Datasets</Link></li>
         <li><Link to="/cesdatasetsanalysis">Elections and Canadian Election Study</Link></li>
         <li><Link to="/education">Education</Link></li>
