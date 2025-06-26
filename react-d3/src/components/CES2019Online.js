@@ -109,7 +109,7 @@ function CES2019Online() {
         pad: { t: 20 },
       },
       xaxis: {
-        tickangle: -45,
+        tickangle: -25,
         automargin: true,
       },
       yaxis: {

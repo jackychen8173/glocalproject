@@ -30,10 +30,3 @@ h1 {
   max-width: 600px; /* or 100% to fill parent */
 }
 
-.plot-container {
-  width: 100%;
-  max-width: 1000px;
-  overflow: visible;
-  padding-top: 1rem;
-  min-height: 600px; /* or height matching Plotly’s height */
-}

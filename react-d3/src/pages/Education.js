@@ -1,7 +1,8 @@
+import EducationParticipationRate from "../components/EducationParticipationRate";
 
 function Employment() {
     return(
-        <h1>In Development</h1>
+        <EducationParticipationRate />
     );
 }
 

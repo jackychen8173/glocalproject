@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
@@ -11,9 +12,9 @@ function Home() {
           Built by Jacky Chen — exploring young Canadian data and perspectives
           through interactive data
         </p>
-        <a href="/cesdatasets" className="cta-button">
+        <Link to="/cesdatasets" className="cta-button">
           Explore the Visualizer
-        </a>
+        </Link>
       </section>
 
       {/* Project Overview */}

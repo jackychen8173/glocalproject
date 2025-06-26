@@ -129,7 +129,7 @@ function CES2021V3() {
         pad: { t: 20 },
       },
       xaxis: {
-        tickangle: -45,
+        tickangle: -25,
         automargin: false,
       },
       yaxis: {
