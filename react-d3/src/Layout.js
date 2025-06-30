@@ -2,16 +2,17 @@ import React from "react";
 import { Outlet } from "react-router-dom"; 
 import Navbar from "./Navbar";
 import "./Layout.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Layout = () => {
   return (
-    <div className="site-wrapper">
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
-      <main className="site-content">
-        <Outlet /> {/* 🔥 This is where Home, Education, etc. will render */}
+      <main  className="flex-fill container py-4">
+        <Outlet />
       </main>
-      <footer className="site-footer">
-        © 2025 Jacky Chen
+      <footer  className="bg-light text-center text-muted py-3 border-top">
+        © 2025 Jacky Chen • Built with React & Bootstrap
       </footer>
     </div>
   );
