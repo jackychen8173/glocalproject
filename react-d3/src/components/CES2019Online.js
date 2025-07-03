@@ -132,10 +132,15 @@ function CES2019Online() {
   }
 
   return (
-    <div className="CES2021">
-      <h1>CES2019 Online Data Explorer - In Progress</h1>
+    <div className="container py-5">
+      <div className="text-center mb-5">
+        <h2 className="fw-bold">CES2019 Online Data Explorer - In Progress</h2>
+        <p className="text-muted">Explore the 2019 CES Online dataset filtered to youth respondents under 30.</p>
+      </div>
 
-      <div className="select-container">
+      <div className="row justify-content-center mb-4">
+        <div className="col-md-8">
+          <label className="form-label fw-semibold">Select a survey question:</label>
         <Select
           options={variableOptions}
           value={
@@ -145,14 +150,16 @@ function CES2019Online() {
           }
           onChange={(option) => setSelectedVariable(option.value)}
         />
+        </div>
       </div>
 
-      <div className="plot-container">
+      <div className="card shadow-sm p-4 mb-5">
         <Plot
           data={[plotData]}
           layout={plotLayout}
           config={{ displayModeBar: false }}
         />
+        
       </div>
     </div>
   );

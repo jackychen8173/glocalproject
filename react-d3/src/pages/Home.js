@@ -28,17 +28,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="col-md-4">
-          <div className="card h-100 shadow-sm">
-            <div className="card-body">
-              <h5 className="card-title">Employment</h5>
-              <p className="card-text">See how employment trends vary by age, gender, and region.</p>
-              <Link to="/employment" className="btn btn-outline-primary">
-                View Employment
-              </Link>
-            </div>
-          </div>
-        </div>
+        
         <div className="col-md-4">
           <div className="card h-100 shadow-sm">
             <div className="card-body">
@@ -46,6 +36,18 @@ function Home() {
               <p className="card-text">Compare postsecondary participation rates by demographic group.</p>
               <Link to="/education" className="btn btn-outline-primary">
                 View Education
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-4">
+          <div className="card h-100 shadow-sm">
+            <div className="card-body">
+              <h5 className="card-title">Employment</h5>
+              <p className="card-text">See how employment trends vary by age, gender, and region.</p>
+              <Link to="/employment" className="btn btn-outline-primary">
+                View Employment
               </Link>
             </div>
           </div>

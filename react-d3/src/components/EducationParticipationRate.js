@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Plot from "react-plotly.js";
 
-function ParticipationStackedPlots() {
+function EducationParticipationRate() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -36,34 +36,41 @@ function ParticipationStackedPlots() {
     }));
 
   return (
-    <div>
-      {Object.entries(ageGroupData).map(([ageGroup, group], idx) => (
-        <Plot
-          key={idx}
-          data={generatePlotData(group)}
-          layout={{
-            title: {
-              text: `Participation in Education: ${ageGroup}`,
-              font: { color: "#333" },
-            },
-            xaxis: {
-              title: {text: "Year", font: {color: "#333"}},
-              tickangle: -45,
-              tickmode: "auto",
-              nticks: 10,
-            },
-            yaxis: {title: { text: "Participation Rate (%)",
-              font: {color: "#333"}
-            }, range: [0, 53] },
-            margin: { t: 60 },
-            height: 400,
-          }}  
-          config={{ displayModeBar: false }}
-          style={{ width: "100%", paddingBottom: "2rem" }}
-        />
-      ))}
+    <div className="row">
+      {Object.entries(ageGroupData).map(([ageGroup, group], idx) => {
+        const traces = Object.entries(group).map(([institution, values]) => ({
+          type: "scatter",
+          mode: "lines+markers",
+          name: institution,
+          x: values.x,
+          y: values.y,
+        }));
+
+        return (
+          <div key={idx} className="col-md-6 justify-content-center mb-4">
+            <div className="card shadow-sm h-100">
+              <div className="card-body">
+                <h5 className="card-title text-center">Participation in Education: {ageGroup}</h5>
+                <Plot
+                  data={traces}
+                  layout={{
+                    autosize: true,
+                    xaxis: { title: "Year", tickangle: -45 },
+                    yaxis: { title: "Participation Rate (%)", range: [0, 55] },
+                    margin: { t: 30, b: 60, l: 50, r: 30 },
+                    height: 350,
+                    legend: { orientation: "h", y: -0.3 },
+                  }}
+                  config={{ displayModeBar: false }}
+                  style={{width: "100%", height:"100%"}}
+                />
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
-export default ParticipationStackedPlots;
+export default EducationParticipationRate;

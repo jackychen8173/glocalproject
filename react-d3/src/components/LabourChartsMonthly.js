@@ -18,8 +18,9 @@ function LabourChartsMonthly() {
   const renderChart = (title, metric, unit, color, yRange) => {
     const metricData = filterByMetric(metric);
     return (
-      <div
-        key={metric}tyle={{ maxWidth: "400px", margin: "0" }}>
+      <div key={metric} className="col-md-6 mb-4">
+        <div className="card shadow-sm h-100">
+          <h5 className="card-title text-center">{title}</h5>
         <Plot
           data={[
             {
@@ -36,10 +37,6 @@ function LabourChartsMonthly() {
             },
           ]}
           layout={{
-            title: {
-              text: title,
-              font: { color: "#333" },
-            },
             xaxis: {
               title: {
                 text: "Age Group",
@@ -55,21 +52,13 @@ function LabourChartsMonthly() {
           }}
           config={{ displayModeBar: false }}
         />
+        </div>
       </div>
     );
   };
 
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "2rem",
-        padding: "1rem",
-        justifyContent: "center",
-        margin: "50px 0 0 0"
-      }}
-    >
+    <div className="row">
       {renderChart(
         "Population by Age Group",
         "Population",

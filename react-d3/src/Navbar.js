@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm sticky-top ">
+    <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm sticky-top">
       <div className="container-fluid px-4">
-        <Link className="navbar-brand fw-bold" to="/">
+        <NavLink className="navbar-brand fw-bold" to="/">
           Data Visualizer
-        </Link>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -23,24 +23,77 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto gap-3">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link border-bottom border-primary border-2"
+                    : "nav-link"
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link border-bottom border-primary border-2"
+                    : "nav-link"
+                }
+              >
+                About
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/cesdatasets">View CES Datasets</Link>
+              <NavLink
+                to="/cesdatasets"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link border-bottom border-primary border-2"
+                    : "nav-link"
+                }
+              >
+                View CES Datasets
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/cesdatasetsanalysis">
+              <NavLink
+                to="/cesdatasetsanalysis"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link border-bottom border-primary border-2"
+                    : "nav-link"
+                }
+              >
                 Elections and Canadian Election Study
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/education">Education</Link>
+              <NavLink
+                to="/education"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link border-bottom border-primary border-2"
+                    : "nav-link"
+                }
+              >
+                Education
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/employment">Employment</Link>
+              <NavLink
+                to="/employment"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link border-bottom border-primary border-2"
+                    : "nav-link"
+                }
+              >
+                Employment
+              </NavLink>
             </li>
           </ul>
         </div>

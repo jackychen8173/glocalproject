@@ -38,16 +38,22 @@ function LabourForcePlotByAgeGroup() {
   }, []);
 
   return (
-    <div>
-      <h2>Employment by Age Group Over Time</h2>
-      <div className="plot-container">
+    <div className="mt-5">
+      <div className="text-center mb-4">
+        <h3 className="fw-bold">Employment Trends by Age Group (Over Time)</h3>
+        <p className="text-muted">
+          Line chart showing employment by age group from historical data.
+        </p>
+      </div>
+      <div className="card shadow-sm p-4">
         <Plot
           data={plotData}
           layout={{
-            title: {text: "Labour Force by Age Group",
+            title: {
+              text: "Labour Force by Age Group",
               font: {
-                color: "#333"
-              }
+                color: "#333",
+              },
             },
             width: 800,
             height: 500,
@@ -56,25 +62,27 @@ function LabourForcePlotByAgeGroup() {
               r: 50,
               b: 80,
               t: 80,
-              pad: 10
+              pad: 10,
             },
-            xaxis: { title: {
-              text: "Year",
-              font: {
-                color: "#333"
-              }
-              }
+            xaxis: {
+              title: {
+                text: "Year",
+                font: {
+                  color: "#333",
+                },
+              },
             },
-            yaxis: { title: {
-              text: "Number Employed (person in thousands)", 
-              font: {
-              color:"#333"
-              } 
-            }
-          },
+            yaxis: {
+              title: {
+                text: "Number Employed (person in thousands)",
+                font: {
+                  color: "#333",
+                },
+              },
+            },
           }}
           config={{
-            displayModeBar: false
+            displayModeBar: false,
           }}
         />
       </div>

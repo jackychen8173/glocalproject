@@ -1,32 +1,7 @@
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  background-color: #f9f9f9;
-}
 
-.CES2021 {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 2rem;  /* Add more vertical breathing room */
-  overflow: visible; 
-}
 
 h1 {
   text-align: center;
   color: #333;
   margin-bottom: 1rem;
 }
-
-.select-container {
-  margin-bottom: 1rem;
-  width: 100%;
-  max-width: 600px; /* or 100% to fill parent */
-}
-

@@ -152,22 +152,31 @@ function CES2021V3() {
   }
 
   return (
-    <div className="CES2021">
-      <h1>CES2021 Data Explorer</h1>
-
-      <div className="select-container">
-        <Select
-          options={variableOptions}
-          value={
-            selectedVariable
-              ? { value: selectedVariable, label: selectedVariable }
-              : null
-          }
-          onChange={(option) => setSelectedVariable(option.value)}
-        />
+    <div className="container py-5">
+      <div className="text-center mb-5">
+        <h2 className="fw-bold">CES2021 Data Explorer</h2>
+        <p className="text-muted">
+          Visualize how young Canadians under 30 years of age responded to
+          survey questions in the 2021 Canadian Election Study.
+        </p>
       </div>
 
-      <div className="plot-container">
+      <div className="row justify-content-center mb-4">
+        <div className="col-md-8">
+          <label className="form-lael fw-semibold">Select a variable:</label>
+          <Select
+            options={variableOptions}
+            value={
+              selectedVariable
+                ? { value: selectedVariable, label: selectedVariable }
+                : null
+            }
+            onChange={(option) => setSelectedVariable(option.value)}
+          />
+        </div>
+      </div>
+
+      <div className="card shadow-sm p-4 mb-5">
         <Plot
           data={[plotData]}
           layout={plotLayout}
