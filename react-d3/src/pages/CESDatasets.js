@@ -2,6 +2,7 @@ import CES2021V3 from "../components/CES2021V3";
 import CES2021Header from "../components/CES2021Header";
 import CES2021Footer from "../components/CES2021Footer";
 import CES2019Online from "../components/CES2019Online";
+import CES2021ByCategory from "../components/CES2021ByCategory";
 
 function CESDatasets() {
   return (
@@ -18,6 +19,7 @@ function CESDatasets() {
       </div>
 
       <CES2021V3 />
+      <CES2021ByCategory />
       <CES2021Footer />
       <CES2019Online />
     </div>

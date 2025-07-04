@@ -23,12 +23,38 @@ function wrapText(text, maxLineLength = 50) {
 
 function CES2021V3() {
   const [data, setData] = useState([]);
+  const [variableLabelMap, setVariableLabelMap] = useState({});
+  const [groupedOptions, setGroupedOptions] = useState([]);   
   const [selectedVariable, setSelectedVariable] = useState(null);
 
   useEffect(() => {
-    fetch("./ces2021_data_new.json")
-      .then((response) => response.json())
-      .then((json) => setData(json))
+    Promise.all([
+      fetch("./ces2021_data_new.json").then((res) => res.json()),
+      fetch("./categorized_variable_label_map.json").then((res) => res.json()),
+    ])
+      .then(([dataJson, labelMapJson]) => {
+        setData(dataJson);
+        setVariableLabelMap(labelMapJson);
+
+        const grouped = Object.entries(labelMapJson).map(([category, variables]) => ({
+          label: category,
+          options: Object.entries(variables)
+          .filter(([key]) => {
+            const values = dataJson.map((row) => row[key]).filter(Boolean);
+            const unique = new Set();
+            values.forEach((val) => {
+              if (typeof val === "string" && val.includes(",")) {
+                val.split(",").map((v) => v.trim()).forEach((entry) => unique.add(entry));
+              } else {
+                unique.add(val);
+              }
+            });
+            return unique.size <= 20;
+          })
+          .map(([key, label]) => ({value: key, label})),
+        }));
+        setGroupedOptions(grouped);
+      })
       .catch((err) => console.error("Failed to load JSON:", err));
   }, []);
 
