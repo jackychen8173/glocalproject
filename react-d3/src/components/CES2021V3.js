@@ -23,38 +23,12 @@ function wrapText(text, maxLineLength = 50) {
 
 function CES2021V3() {
   const [data, setData] = useState([]);
-  const [variableLabelMap, setVariableLabelMap] = useState({});
-  const [groupedOptions, setGroupedOptions] = useState([]);   
   const [selectedVariable, setSelectedVariable] = useState(null);
 
   useEffect(() => {
-    Promise.all([
-      fetch("./ces2021_data_new.json").then((res) => res.json()),
-      fetch("./categorized_variable_label_map.json").then((res) => res.json()),
-    ])
-      .then(([dataJson, labelMapJson]) => {
-        setData(dataJson);
-        setVariableLabelMap(labelMapJson);
-
-        const grouped = Object.entries(labelMapJson).map(([category, variables]) => ({
-          label: category,
-          options: Object.entries(variables)
-          .filter(([key]) => {
-            const values = dataJson.map((row) => row[key]).filter(Boolean);
-            const unique = new Set();
-            values.forEach((val) => {
-              if (typeof val === "string" && val.includes(",")) {
-                val.split(",").map((v) => v.trim()).forEach((entry) => unique.add(entry));
-              } else {
-                unique.add(val);
-              }
-            });
-            return unique.size <= 20;
-          })
-          .map(([key, label]) => ({value: key, label})),
-        }));
-        setGroupedOptions(grouped);
-      })
+    fetch("./ces2021_data_new.json")
+      .then((response) => response.json())
+      .then((json) => setData(json))
       .catch((err) => console.error("Failed to load JSON:", err));
   }, []);
 
@@ -187,28 +161,53 @@ function CES2021V3() {
         </p>
       </div>
 
-      <div className="row justify-content-center mb-4">
-        <div className="col-md-8">
-          <label className="form-lael fw-semibold">Select a variable:</label>
-          <Select
-            options={variableOptions}
-            value={
-              selectedVariable
-                ? { value: selectedVariable, label: selectedVariable }
-                : null
-            }
-            onChange={(option) => setSelectedVariable(option.value)}
-          />
+      {data.length === 0 ? (
+        <div className="text-center my-4">
+          <div className="spinner-border text-primary" role="status" />
+          <p className="mt-2 text-muted">Loading CES2021 data...</p>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="row justify-content-center mb-4">
+            <div className="col-md-8">
+              <label className="form-label fw-semibold">
+                Select a variable:
+              </label>
+              <Select
+                options={variableOptions}
+                placeholder="Choose a survey question..."
+                value={
+                  selectedVariable
+                    ? { value: selectedVariable, label: selectedVariable }
+                    : null
+                }
+                onChange={(option) => setSelectedVariable(option.value)}
+              />
+            </div>
+          </div>
 
-      <div className="card shadow-sm p-4 mb-5">
-        <Plot
-          data={[plotData]}
-          layout={plotLayout}
-          config={{ displayModeBar: false }}
-        />
-      </div>
+          {selectedVariable &&
+            selectedVariable.includes("Select all that apply") && (
+              <div className="alert alert-info text-center mt-3">
+                <strong>Note:</strong> This is a "Select all that apply"
+                question. Each response may include multiple options.
+              </div>
+            )}
+
+          <div className="card shadow-sm p-4 mb-3">
+            <Plot
+              data={[plotData]}
+              layout={plotLayout}
+              config={{ displayModeBar: false, responsive: true }}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+
+          <p className="text-muted text-center mt-2" style={{ fontSize: "0.85rem" }}>
+            Data is filtered for respondents under 30 years of age.
+          </p>
+        </>
+      )}
     </div>
   );
 }

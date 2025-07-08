@@ -17,11 +17,13 @@ function Home() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        <h1 className="display-4 fw-bold">Young Canadian Data Explorer</h1>
-        <p className="lead mt-3">
-          Explore the perspectives of young Canadians — from elections to education and employment — using interactive data.
+        <h1 className="display-4 fw-bold text-primary">
+          🧭 Young Canadian Data Explorer
+        </h1>
+        <p className="lead mt-3 text-muted">
+          Explore how youth in Canada engage with education, employment, and elections — powered by interactive data visualizations.
         </p>
-        <Link to="/cesdatasets" className="btn btn-primary btn-lg mt-3">
+        <Link to="/cesdatasets" className="btn btn-primary btn-lg mt-4 shadow-sm px-4 py-2">
           Explore the Visualizer
         </Link>
       </motion.section>
@@ -41,20 +43,20 @@ function Home() {
       >
         {[
           {
-            title: "Elections",
+            title: "🗳️ Elections",
             text: "Explore Canadian Election Study data filtered for youth voters.",
             link: "/cesdatasets",
             button: "View CES",
           },
           {
-            title: "Education",
-            text: "Compare postsecondary participation rates by demographic group.",
+            title: "🎓 Education",
+            text: "Compare postsecondary participation and graduation across age groups.",
             link: "/education",
             button: "View Education",
           },
           {
-            title: "Employment",
-            text: "See how employment trends vary by age, gender, and region.",
+            title: "💼 Employment",
+            text: "See how labour trends differ by age, gender, and region.",
             link: "/employment",
             button: "View Employment",
           },
@@ -68,11 +70,13 @@ function Home() {
             }}
             transition={{ duration: 0.6 }}
           >
-            <div className="card h-100 shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">{item.title}</h5>
-                <p className="card-text">{item.text}</p>
-                <Link to={item.link} className="btn btn-outline-primary">
+            <div className="card h-100 shadow-sm border-0">
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <h5 className="card-title fw-bold">{item.title}</h5>
+                  <p className="card-text text-muted">{item.text}</p>
+                </div>
+                <Link to={item.link} className="btn btn-outline-primary mt-3">
                   {item.button}
                 </Link>
               </div>

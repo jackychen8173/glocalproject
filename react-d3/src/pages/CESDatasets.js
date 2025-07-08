@@ -7,21 +7,40 @@ import CES2021ByCategory from "../components/CES2021ByCategory";
 function CESDatasets() {
   return (
     <div className="container py-5">
-      <div className="mb-4 text-center">
-        <h1 className="fw-bold">
-          C-Dem's Canadian Election Study Visualizations
+      {/* Page Header */}
+      <div className="mb-5 text-center">
+        <h1 className="display-4 fw-bold text-primary">
+          🗳️ Canadian Election Study Visualizations
         </h1>
-        <p className="text-muted">
-          View survey data from the 2021 and 2019 CES, filtered to young
-          Canadians under 30.
+        <p className="text-muted fs-5">
+          Explore survey data from the 2021 and 2019 CES — filtered for Canadians under 30.
         </p>
-        <p className="text-danger">2025 data will be added when released.</p>
+        <p className="text-danger fw-semibold fs-6">
+          ⚠️ 2025 data will be added once released.
+        </p>
       </div>
 
-      <CES2021V3 />
-      <CES2021ByCategory />
-      <CES2021Footer />
-      <CES2019Online />
+      {/* Section 1: CES 2021 */}
+      <section className="mb-5">
+        <CES2021V3 />
+        <CES2021ByCategory />
+        <CES2021Footer />
+      </section>
+
+      {/* Section 2: CES 2019 */}
+      <section className="mb-5">
+        <CES2019Online />
+        <footer className="text-center text-muted mt-4" style={{ fontSize: "0.9rem" }}>
+          Data Source:{" "}
+          <a
+            href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DUS88V"
+            target="_blank"
+            rel="noreferrer"
+          >
+            CES 2019 Online Dataset
+          </a>
+        </footer>
+      </section>
     </div>
   );
 }

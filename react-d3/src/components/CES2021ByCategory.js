@@ -24,7 +24,8 @@ function CES2021ByCategory() {
   const [data, setData] = useState([]);
   const [labelMap, setLabelMap] = useState({});
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedLabel, setSelectedLabel] = useState(null); // human-readable label selected
+  const [selectedLabel, setSelectedLabel] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Promise.all([
@@ -35,10 +36,10 @@ function CES2021ByCategory() {
         setData(dataJson);
         setLabelMap(labelMapJson);
       })
-      .catch((err) => console.error("Failed to load:", err));
+      .catch((err) => console.error("Failed to load:", err))
+      .finally(() => setLoading(false));
   }, []);
 
-  // Build reverse map label => code
   const reverseLabelMap = React.useMemo(() => {
     const map = {};
     Object.entries(labelMap).forEach(([category, variables]) => {
@@ -49,13 +50,11 @@ function CES2021ByCategory() {
     return map;
   }, [labelMap]);
 
-  // Category options
   const categoryOptions = Object.keys(labelMap).map((cat) => ({
     value: cat,
     label: cat,
   }));
 
-  // Question options: all labels under selectedCategory
   const questionOptions =
     selectedCategory && labelMap[selectedCategory]
       ? Object.values(labelMap[selectedCategory]).map((label) => ({
@@ -64,10 +63,8 @@ function CES2021ByCategory() {
         }))
       : [];
 
-  // Find variable code from selectedLabel
   const selectedCode = selectedLabel ? reverseLabelMap[selectedLabel] : null;
 
-  // Prepare data for plot using human-readable keys in data
   let plotData = { x: [], y: [], type: "bar", marker: { color: "skyblue" } };
   let plotLayout = {
     title: "Select a question to display data",
@@ -79,9 +76,8 @@ function CES2021ByCategory() {
   };
 
   if (data.length > 0 && selectedLabel) {
-    // Use selectedLabel because data keys are human-readable
     const values = data.map((row) => row[selectedLabel]).filter(Boolean);
-    const isMultiSelect = values.some((val) => typeof val === "string" && val.includes(","));
+    const isMultiSelect = selectedLabel.includes("Select all that apply");
     const counts = {};
 
     if (isMultiSelect) {
@@ -103,9 +99,7 @@ function CES2021ByCategory() {
     const sortedEntries = Object.entries(counts).sort((a, b) => {
       const numA = parseInt(a[0]);
       const numB = parseInt(b[0]);
-      return isNaN(numA) || isNaN(numB)
-        ? a[0].localeCompare(b[0])
-        : numA - numB;
+      return isNaN(numA) || isNaN(numB) ? a[0].localeCompare(b[0]) : numA - numB;
     });
 
     const labels = sortedEntries.map(([key]) => {
@@ -134,6 +128,16 @@ function CES2021ByCategory() {
       width: 1000,
       height: 600,
     };
+  }
+
+  if (loading) {
+    return (
+      <div className="container py-5 text-center">
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   }
 
   return (

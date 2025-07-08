@@ -3,17 +3,17 @@ import React from "react";
 function About() {
   return (
     <div className="container py-5">
-      {/* Hero Section*/}
+      {/* Hero Section */}
       <div className="bg-primary text-white text-center py-5 mb-5 rounded shadow-sm">
-        <h1 className="fw-bold mb-4">About This Project</h1>
+        <h1 className="display-4 fw-bold mb-3">About This Project</h1>
         <p className="lead">
-          Making young Canadians data visual, accessible, and meaningful.
+          Making young Canadians' data visual, accessible, and meaningful.
         </p>
       </div>
 
-      {/* Project Description */}
-      <section className="p-4 mb-4 bg-light rounded shadow-sm">
-        <h2 className="h4 fw-semibold">What is This Project?</h2>
+      {/* What is this Project */}
+      <section className="p-4 mb-5 bg-light rounded shadow-sm">
+        <h2 className="fs-4 fw-bold mb-3">📌 What is This Project?</h2>
         <p>
           As a Canada Summer Jobs (CSJ) worker at{" "}
           <a
@@ -24,120 +24,111 @@ function About() {
             GLOCAL Foundation of Canada
           </a>
           , I set out to explore what life looks like for young Canadians — both
-          in terms of their situations (employment and education) and their
-          perspectives on politics and society. This project aims to make
-          youth-focused data more accessible and understandable through
-          engaging, interactive visualizations.
+          in terms of their real-life situations (like education and employment)
+          and their perspectives on politics and society.
+        </p>
+        <p>
+          This interactive website brings together survey responses and official
+          statistics to paint a fuller picture of youth in Canada today.
+          Engaging visualizations help make this data easier to understand for
+          Canadians and global audiences alike.
+        </p>
+      </section>
+
+      {/* Why I Chose This */}
+      <section className="p-4 mb-5 bg-light rounded shadow-sm">
+        <h2 className="fs-4 fw-bold mb-3">💡 Why I Chose to Do This</h2>
+        <p>
+          I'm part of the generation this project focuses on. I've seen how many
+          young Canadians are navigating uncertainty around employment,
+          education, and the future. Youth voices are often underrepresented in
+          policy conversations, and I wanted to help amplify them through data.
+        </p>
+        <p>
+          I focused on election, education, and employment data — key areas that
+          shape young people's opportunities and experiences.
         </p>
       </section>
 
       {/* Datasets */}
-      <section className="p-4 mb-4 bg-light rounded shadow-sm">
-        <h2 className="h4 fw-semibold">Datasets</h2>
+      <section className="p-4 mb-5 bg-light rounded shadow-sm">
+        <h2 className="fs-4 fw-bold mb-3">📊 Datasets Used</h2>
         <ul className="ps-3 mb-0">
           <li className="mb-2">
-            <strong>CES 2021 Dataset:</strong> The 2021 Canadian Election Study
-            (CES) was conducted to document the attitudes of Canadians during
-            and after the 2021 election. It was also designed to mimic the
-            distributions in the population. For my visualization, I filtered to
-            only include survey respondents under the age of 30. I also have not
-            included questions that have over 20 responses, which includes
-            questions that contains 0-100 scales and open-ended questions. For
-            more information, here is{" "}
+            <strong>CES 2021 Dataset:</strong> Canadian Election Study filtered
+            for respondents under 30. Excludes questions with over 20 responses
+            or open-text inputs.{" "}
             <a
               href="https://glocalfoundation.ca/canadian-election-study"
               target="_blank"
               rel="noreferrer"
             >
-              GLOCAL's analysis of the 2021 election study
+              GLOCAL's CES 2021 analysis
             </a>
             .
           </li>
           <li className="mb-2">
-            <strong>CES 2019 Online Dataset:</strong> Similar to the CES2021
-            dataset, it is filtered to only include respondents under the age of
-            30 and containing 20 or less response answers. This data also only
-            includes the online portion and not the phone survey data. The
-            original question codes and labels are stil included.
+            <strong>CES 2019 Online Dataset:</strong> Online portion only,
+            filtered similarly. Original codes and labels preserved.
           </li>
           <li className="mb-2">
-            <strong>Participation in Education Dataset:</strong> This dataset
-            looks at the participation rate of education in Canada, sorted by
-            age group (18-24 years and 25-29 years) and type of institution
-            attended (total, elementary/high school, college, and university)
-            from 2006/2007 to 2023/2024
+            <strong>Participation in Education:</strong> Tracks education
+            participation by age and institution type from 2006/2007 to
+            2023/2024.
           </li>
           <li className="mb-2">
-            <strong>Undergraduate Persistence and Graduation Dataset:</strong>{" "}
-            This dataset looks at the persistence rate (after 1 year and after 2
-            years) and graduation rate (within 4 years, within 6 years, and
-            within 8 years) of undergraduate degree Canadian students from
-            2011/2012 to 2022/2023. The data also includes the average time it
-            takes to graduate.
+            <strong>Undergraduate Persistence & Graduation:</strong> Follows
+            persistence and graduation rates from 2011/2012 to 2022/2023,
+            including average graduation time.
           </li>
           <li className="mb-2">
-            <strong>Monthly Labour Force Dataset:</strong> This dataset shows the
-            monthly labour force characteristics (population, employment rate, 
-            unemployment rate, and participation rate) by age group, seasonally adjusted.
-            The data currently displayed is May 2025. For more information about seasonal 
-            adjustment, here is the {" "}
+            <strong>Monthly Labour Force:</strong> May 2025 data by age group
+            (seasonally adjusted). See{" "}
             <a
               href="https://www.statcan.gc.ca/en/dai/btd/sad-faq"
               target="_blank"
               rel="noreferrer"
             >
-              Statistics Canada post 
-            </a> 
-            {" "} about it.
+              StatsCan FAQ
+            </a>{" "}
+            for seasonal adjustment details.
           </li>
           <li className="mb-2">
-            <strong>Annual Labour Force Dataset:</strong> This dataset shows the yearly 
-            labour force population sorted by age group.
+            <strong>Annual Labour Force:</strong> Annual labour force population
+            by age group.
           </li>
         </ul>
       </section>
 
-
       {/* Challenges */}
-      <section className="p-4 mb-4 bg-light rounded shadow-sm">
-        <h2 className="h4 fw-semibold">Challenges Faced</h2>
+      <section className="p-4 mb-5 bg-light rounded shadow-sm">
+        <h2 className="fs-4 fw-bold mb-3">🧩 Challenges Faced</h2>
         <ul className="ps-3 mb-0">
-          <li className="mb-2">
-            Cleaning .dta files and selecting meaningful variables.
-          </li>
-          <li className="mb-2">
-            Handling "select all that apply" and coded label formats.
-          </li>
-          <li className="mb-2">
-            Label mapping for human-readable visualization.
-          </li>
-          <li className="mb-2">
-            Building responsive, interactive charts in a React app.
-          </li>
+          <li className="mb-2">Cleaning `.dta` files and choosing useful variables.</li>
+          <li className="mb-2">Handling "select all that apply" and coded labels.</li>
+          <li className="mb-2">Mapping values to readable labels.</li>
+          <li className="mb-2">Building responsive, interactive charts with React + Plotly.</li>
         </ul>
       </section>
 
       {/* Future Plans */}
-      <section className="p-4 mb-4 bg-light rounded shadow-sm">
-        <h2 className="h4 fw-semibold">Future Plans</h2>
+      <section className="p-4 mb-5 bg-light rounded shadow-sm">
+        <h2 className="fs-4 fw-bold mb-3">🚀 Future Ideas & Plans</h2>
         <ul className="ps-3 mb-0">
           <li className="mb-2">Add more datasets as they become available.</li>
           <li className="mb-2">Support broader demographics beyond youth.</li>
-          <li className="mb-2">
-            Enable filtering by gender, region, and other attributes.
-          </li>
-          <li className="mb-2">
-            Provide summaries or key insights automatically.
-          </li>
+          <li className="mb-2">Enable filters by gender, region, and more.</li>
+          <li className="mb-2">Add automated summaries and insights.</li>
         </ul>
       </section>
 
-      <section className="p-4 mb-4 bg-light rounded shadow-sm">
-        <h2 className="h4 fw-semibold">About Me</h2>
+      {/* About Me */}
+      <section className="p-4 bg-light rounded shadow-sm">
+        <h2 className="fs-4 fw-bold mb-3">👋 About Me</h2>
         <p>
-          I'm Jacky, a developer with a background in Computer Science and an
-          interest in making data easier to understand. I created this project
-          to bridge public datasets with accessible visual tools for education
+          I'm Jacky — a developer with a background in Computer Science and an
+          interest in making data easier to understand. I built this project to
+          connect public datasets with interactive, visual tools for learning
           and insight.
         </p>
       </section>

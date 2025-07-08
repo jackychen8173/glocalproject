@@ -50,19 +50,33 @@ function EducationParticipationRate() {
           <div key={idx} className="col-md-6 justify-content-center mb-4">
             <div className="card shadow-sm h-100">
               <div className="card-body">
-                <h5 className="card-title text-center">Participation in Education: {ageGroup}</h5>
+                <h5 className="card-title text-center">
+                  Participation in Education: {ageGroup}
+                </h5>
                 <Plot
                   data={traces}
                   layout={{
                     autosize: true,
-                    xaxis: { title: "Year", tickangle: -45 },
-                    yaxis: { title: "Participation Rate (%)", range: [0, 55] },
+                    xaxis: {
+                      title: {text: "Year", font: { color: "#333" }},
+                      tickangle: -45,
+                    },
+                    yaxis: {
+                      title: {
+                        text: "Participation Rate (%)",
+                        font: {
+                          color: "#333",
+                        },
+                      },
+
+                      range: [0, 55],
+                    },
                     margin: { t: 30, b: 60, l: 50, r: 30 },
                     height: 350,
-                    legend: { orientation: "h", y: -0.3 },
+                    legend: { orientation: "h", y: -0.4},
                   }}
                   config={{ displayModeBar: false }}
-                  style={{width: "100%", height:"100%"}}
+                  style={{ width: "100%", height: "100%" }}
                 />
               </div>
             </div>

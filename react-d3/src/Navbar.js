@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bg-white border-bottom shadow-sm sticky-top">
       <div className="container-fluid px-4">
         <NavLink className="navbar-brand fw-bold" to="/">
-          Data Visualizer
+          Data Explorer
         </NavLink>
         <button
           className="navbar-toggler"
@@ -56,19 +56,7 @@ function Navbar() {
                     : "nav-link"
                 }
               >
-                View CES Datasets
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/cesdatasetsanalysis"
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link border-bottom border-primary border-2"
-                    : "nav-link"
-                }
-              >
-                Elections and Canadian Election Study
+                CES Datasets
               </NavLink>
             </li>
             <li className="nav-item">

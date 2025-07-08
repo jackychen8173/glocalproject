@@ -33,7 +33,7 @@ function UndergradPersistenceGraduation() {
         },
       ],
       yaxis: "Number of Students",
-      yRange: [0, 150000]
+      yRange: [0, 150000],
     },
     {
       title: "Average Time to Graduation (Years)",
@@ -71,7 +71,7 @@ function UndergradPersistenceGraduation() {
         },
       ],
       yaxis: "Persistence (%)",
-      yRange: [0,100],
+      yRange: [0, 100],
     },
     {
       title: "Graduation Rates",
@@ -102,7 +102,7 @@ function UndergradPersistenceGraduation() {
         },
       ],
       yaxis: "Graduation (%)",
-      yRange: [0, 100]
+      yRange: [0, 100],
     },
   ];
 
@@ -117,14 +117,17 @@ function UndergradPersistenceGraduation() {
                 data={chart.data}
                 layout={{
                   autosize: true,
-                  xaxis: { title: "Cohort Year", range: chart.xRange },
-                  yaxis: { title: chart.yaxis, range: chart.yRange },
+                  xaxis: {
+                    title: { text: "Cohort Year", font: { color: "#333" } },
+                    range: chart.xRange,
+                  },
+                  yaxis: { title: {text: chart.yaxis, font: { color: "#333" } }, range: chart.yRange },
                   margin: { t: 30, b: 60, l: 60, r: 20 },
                   height: 350,
                   legend: { orientation: "h", y: -0.3 },
                 }}
                 config={{ displayModeBar: false }}
-                style={{width:"100%", height:"100%"}}
+                style={{ width: "100%", height: "100%" }}
               />
             </div>
           </div>
