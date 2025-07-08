@@ -1,5 +1,6 @@
 {
   "Demographics": {
+    "cps21_age": "How old are you?",
     "cps21_citizenship": "Are you a...",
     "cps21_genderid": "Are you...?",
     "cps21_trans": "Are you transgender?",
