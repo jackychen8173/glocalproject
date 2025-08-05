@@ -157,8 +157,15 @@ function CES2021V3() {
         <h2 className="fw-bold">CES2021 Data Explorer</h2>
         <p className="text-muted">
           Visualize how young Canadians under 30 years of age responded to
-          survey questions in the 2021 Canadian Election Study.
+          survey questions in the 2021 Canadian Election Study. 
         </p>
+        <a
+            href="https://glocalfoundation.ca/canadian-election-study"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GLOCAL's report on the 2021 Canadian Election Study
+          </a>
       </div>
 
       {data.length === 0 ? (

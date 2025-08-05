@@ -33,7 +33,7 @@ function Education() {
         <div className="text-center mb-4">
           <h2 className="fw-bold fs-3">📈 Undergraduate Persistence & Graduation</h2>
           <p className="text-muted fs-6">
-            Persistence rates after 1 & 2 years, plus graduation within 4, 6, and 8 years
+            Canadian students aged 15-19 years, Persistence rates after 1 & 2 years, plus graduation within 4, 6, and 8 years
           </p>
         </div>
         <UndergradPersistenceGraduation />

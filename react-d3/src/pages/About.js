@@ -39,7 +39,7 @@ function About() {
       <section className="p-4 mb-5 bg-light rounded shadow-sm">
         <h2 className="fs-4 fw-bold mb-3">💡 Why I Chose to Do This</h2>
         <p>
-          I'm part of the generation this project focuses on. I've seen how many
+          I chose to do this project and focus on young Canadians is because I'm part of the generation and I've seen how many
           young Canadians are navigating uncertainty around employment,
           education, and the future. Youth voices are often underrepresented in
           policy conversations, and I wanted to help amplify them through data.

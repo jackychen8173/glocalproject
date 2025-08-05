@@ -123,7 +123,7 @@ function CES2021ByCategory() {
         xanchor: "center",
       },
       xaxis: { tickangle: -25 },
-      yaxis: { title: "Number of People", font: { color: "#333" } },
+      yaxis: { title: {text: "Number of People", font: {color: "#333"}} },
       margin: { t: 140, b: 140, l: 80, r: 50 },
       width: 1000,
       height: 600,
