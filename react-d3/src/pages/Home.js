@@ -18,7 +18,7 @@ function Home() {
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <h1 className="display-4 fw-bold text-primary">
-          🧭 Young Canadian Data Explorer
+          🧭 Youth Data Explorer
         </h1>
         <p className="lead mt-3 text-muted">
           Explore how youth in Canada engage with education, employment, and elections — powered by interactive data visualizations.
@@ -56,7 +56,7 @@ function Home() {
           },
           {
             title: "💼 Employment",
-            text: "See how labour trends differ by age, gender, and region.",
+            text: "Explore how labour trends vary by age over months and years.",
             link: "/employment",
             button: "View Employment",
           },

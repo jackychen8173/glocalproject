@@ -49,7 +49,7 @@ function CESDatasets() {
 
       {/* Section 1: CES 2021 */}
       <section className="mb-5">
-        <CES2021V3 />
+        {/* <CES2021V3 /> */}
         <CES2021ByCategory />
         <CES2021Footer />
       </section>

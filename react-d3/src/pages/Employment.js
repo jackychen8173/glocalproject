@@ -2,6 +2,7 @@ import React from "react";
 import Plot from "react-plotly.js";
 import LabourForcePlotByAgeGroup from "../components/LabourForcePlotByAgeGroup";
 import LabourChartsMonthly from "../components/LabourChartsMonthly";
+import LabourDataByAPI from "../components/LabourDataByAPI";
 
 function Employment() {
   return (
@@ -40,7 +41,13 @@ function Employment() {
           Source: Statistics Canada, Table 14-10-0327-01
         </footer>
       </section>
+
+      <div>
+        <LabourDataByAPI />
+      </div>
     </div>
+
+    
   );
 }
 
