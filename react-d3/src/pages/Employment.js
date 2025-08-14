@@ -42,9 +42,6 @@ function Employment() {
         </footer>
       </section>
 
-      <div>
-        <LabourDataByAPI />
-      </div>
     </div>
 
     
