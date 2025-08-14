@@ -1,14 +1,14 @@
 {
   "Demographics": {
     "cps21_age": "How old are you?",
-    "cps21_citizenship": "Are you a...",
-    "cps21_genderid": "Are you...?",
+    "cps21_citizenship": "Citizenship - Are you a...",
+    "cps21_genderid": "Gender - Are you...?",
     "cps21_trans": "Are you transgender?",
     "cps21_province": "In which province or territory are you currently living?",
     "cps21_education": "What is the highest level of education that you have completed?",
     "cps21_religion": "Please indicate your religion, if you have one?",
     "cps21_bornin_canada": "Were you born in Canada?",
-    "cps21_vismin_1": "Do you identify as any of the following? (Please select all that apply)",
+    "cps21_vismin_1": "Do you identify as any of the following? (Select all that apply)",
     "cps21_two_spirit": "Are you Two-Spirit?",
     "cps21_sexuality": "Which of the following best represents how you think of yourself?",
     "cps21_language_1": "Which language(s) did you learn as a child and still understand today? (Select all that apply)",
