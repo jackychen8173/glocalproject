@@ -1,0 +1,274 @@
+{
+  "Demographics": {
+    "dc24_age_in_years": "How old are you?",
+    "dc24_citizenship": "Are you a...",
+    "dc24_citizen_other": "Are you a citizen of any other country besides Canada?",
+    "dc24_genderid": "Are you...?",
+    "dc24_trans": "Are you transgender?",
+    "dc24_province": "Which province or territory are you currently living in?",
+    "dc24_education": "What is the highest level of education that you have completed?",
+    "dc24_language_1": "What is the very first language you learned and still understand? Select all that apply",
+    "dc24_canada_born": "Were you born in Canada?",
+    "dc24_country_born": "What country were you born in?",
+    "dc24_parent_born": "Were your parents born in Canada?",
+    "dc24_vismin_1": "Do you identify as... (Select all that apply)",
+    "dc24_two_spirit": "Are you Two-Spirit?",
+    "dc24_employment": "What is your employment status? Are you currently…",
+    "dc24_income_category": "What was your total household income, before taxes, for the year 2023? Be sure to include income from all sources.",
+    "dc24_marital_status": "Are you presently married, living with a partner, divorced, separated, widowed, or have you never been married?",
+    "dc24_disability": "Are you a person with a disability?",
+    "dc24_disabilitytype": "What is your disability?",
+    "dc24_children1": "How many, if any, children do you have?",
+    "dc24_children_attend_1": "Do any of your children normally attend any of the following? (Select all that apply)",
+    "dc24_property_1": "Property - Do you or a member of your household... (Select all that apply)",
+    "dc24_yob": "In what year were you born?",
+    "dc24_religion": "Please tell me what is your religion, if you have one?",
+    "dc24_religion_import": "In your life, you would say religion is:"
+  },
+  "Satisfaction and Interest": {
+    "dc24_democratic_sat": "On the whole, how satisfied are you with the way democracy works in Canada?",
+    "dc24_pol_interest_1": "How interested are you in politics generally? Set the slider to a number from 0 to 10, where 0 means no interest at all, and 10 means a great deal of interest."
+  },
+  "Vote Choice": {
+    "dc24_vote_choice": "If a federal election were held today, which party would you be most likely to vote for?",
+    "dc24_provvote": "If a provincial election were held today in your province, which party would you vote for?",
+    "dc24_turnout_2021": "Did you happen to vote in the last federal election in 2021?",
+    "dc24_vote_2021": "Which party did you vote for in the federal election in 2021?"
+  },
+  "Party Ratings": {
+    "dc24_party_ratings_23": "How do you feel about the federal political parties below? Set the slider to a number from 0 to 100, where 0 means you really dislike the party and 100 means you really like the party: Liberal Party",
+    "dc24_party_ratings_24": "How do you feel about the federal political parties below? Set the slider to a number from 0 to 100, where 0 means you really dislike the party and 100 means you really like the party: Conservative Party",
+    "dc24_party_ratings_25": "How do you feel about the federal political parties below? Set the slider to a number from 0 to 100, where 0 means you really dislike the party and 100 means you really like the party: New Democratic Party",
+    "dc24_party_ratings_26": "How do you feel about the federal political parties below? Set the slider to a number from 0 to 100, where 0 means you really dislike the party and 100 means you really like the party: Bloc Québécois",
+    "dc24_party_ratings_27": "How do you feel about the federal political parties below? Set the slider to a number from 0 to 100, where 0 means you really dislike the party and 100 means you really like the party: Green Party",
+    "dc24_party_ratings_29": "How do you feel about the federal political parties below? Set the slider to a number from 0 to 100, where 0 means you really dislike the party and 100 means you really like the party: People's Party of Canada"
+  },
+  "Leader Ratings": {
+    "dc24_leader_ratings_23": "How do you feel about the federal party leaders below? Set the slider to a number from 0 to 100, where 0 means you really dislike the leader and 100 means you really like the leader: Justin Trudeau",
+    "dc24_leader_ratings_24": "How do you feel about the federal party leaders below? Set the slider to a number from 0 to 100, where 0 means you really dislike the leader and 100 means you really like the leader: Pierre Poilievre",
+    "dc24_leader_ratings_25": "How do you feel about the federal party leaders below? Set the slider to a number from 0 to 100, where 0 means you really dislike the leader and 100 means you really like the leader: Jagmeet Singh",
+    "dc24_leader_ratings_26": "How do you feel about the federal party leaders below? Set the slider to a number from 0 to 100, where 0 means you really dislike the leader and 100 means you really like the leader: Yves-François Blanchet",
+    "dc24_leader_ratings_27": "How do you feel about the federal party leaders below? Set the slider to a number from 0 to 100, where 0 means you really dislike the leader and 100 means you really like the leader: Elizabeth May",
+    "dc24_leader_ratings_29": "How do you feel about the federal party leaders below? Set the slider to a number from 0 to 100, where 0 means you really dislike the leader and 100 means you really like the leader: Maxime Bernier"
+  },
+  "Institutional Trust": {
+    "dc24_confidence_inst_1": "Please indicate how much confidence you have in the following: The courts",
+    "dc24_confidence_inst_2": "Please indicate how much confidence you have in the following: The federal government",
+    "dc24_confidence_inst_3": "Please indicate how much confidence you have in the following: The media",
+    "dc24_confidence_inst_4": "Please indicate how much confidence you have in the following: Your provincial/territorial government",
+    "dc24_confidence_inst_6": "Please indicate how much confidence you have in the following: Elections Canada ",
+    "dc24_confidence_inst_8": "Please indicate how much confidence you have in the following: Provincial election management body",
+    "dc24_confidence_inst_9": "Please indicate how much confidence you have in the following: Police officers ",
+    "dc24_confidence_inst_10": "Please indicate how much confidence you have in the following: Public service ",
+    "dc24_trust2": "Generally speaking would you say that most people can be trusted, or, that you need to be very careful when dealing with people?"
+  },
+  "Federal and Provincial Satisfaction": {
+    "dc24_fed_gov_satisfa": "How satisfied are you with the performance of the federal government under Justin Trudeau?"
+  },
+  "Attitudes Intro": {
+    "dc24_pos_equal_1": "We have gone too far in pushing equal rights in this country",
+    "dc24_pos_jobs": "When there is a conflict between protecting the environment and creating jobs, jobs should come first.",
+    "dc24_pos_group_id": "My ethnicity is an important part of my identity.",
+    "dc24_pos_assim": "Too many recent immigrants just don't want to fit in to Canadian society.",
+    "dc24_pos_take_jobs": "Immigrants take jobs away from other Canadians.",
+    "dc24_pos_look_after": "We should look after Canadians born in this country first and others second.",
+    "dc24_pos_protest_law": "Canadians have a duty to protest laws and policies they believe are unjust.",
+    "dc24_pos_limit_prote": "Political protests are disruptive and should be limited.",
+    "dc24_pos_career_pol": "Ordinary people, not career politicians, should make our most important policy decisions.",
+    "dc24_pos_experts": "I’d rather put my trust in the wisdom of ordinary people than the opinions of experts and intellectuals.",
+    "dc24_pos_lose_touch": "Those elected to Parliament soon lose touch with the people.",
+    "dc24_pos_pol_lie": "Politicians are willing to lie to get elected.",
+    "dc24_pos_ab_colonial": "Generations of colonialism and discrimination have created conditions that make it difficult for Indigenous peoples to work their way out of poverty.",
+    "dc24_pos_ab_deserve": "Over the past few years, Indigenous peoples have gotten less than they deserve.",
+    "dc24_pos_women_home": "Society would be better off if fewer women worked outside the home.",
+    "dc24_pos_bilingualis": "We have gone too far in pushing bilingualism in Canada.",
+    "dc24_pos_relig_sym": "There should be restrictions on religious symbols in public life.",
+    "dc24_pos_no_differen": "Elections make no difference to what happens in this country",
+    "dc24_pos_govt_care": "The government does not care much about what people like me think.",
+    "dc24_pos_govt_comp": "Sometimes, politics and government seem so complicated that a person like me can't really understand what's going on.",
+    "dc24_pos_govt_say": "People like me don't have any say about what the government does.",
+    "dc24_pos_offensive_s": "People should be able to say what they think even if it offends some people.",
+    "dc24_pos_family_val": "This country would have many fewer problems if there was more emphasis on traditional family values.",
+    "dc24_pos_govt_jobs": "The government should leave it entirely to the private sector to create jobs."
+  },
+  "Government Capacity": {
+    "dc24_govtprograms": "Government can no longer deliver the kinds of programs and services people want."
+  },
+  "Attitudes - Women Home & Women in Politics": {
+    "dc24_womenparl": "The best way to protect women's interests is to have more women in Parliament."
+  },
+  "Attitude - System Justice": {
+    "dc24_soc_fair": "In general, Canadian society is fair.",
+    "dc24_pol_sys": "In general, the Canadian political system operates as it should."
+  },
+  "Modern Racism": {
+    "dc24_modern_racism_1": "Over the past few years, the Canadian government and news media have shown more respect to racialized people than they deserve.",
+    "dc24_modern_racism_2": "Discrimination against racialized people is no longer a problem in Canada.",
+    "dc24_modern_racism_3": "Over the past few years, racialized people in Canada have gotten more economically than they deserve"
+  },
+  "Foreign Interference": {
+    "dc24_foreignconfid": "How confident are you that our elections are safe from foreign interference?",
+    "dc24_foreignsafe": "How safe do you think Canadian elections are from foreign interference?"
+  },
+  "Climate Change": {
+    "dc24_cc1": "Do you think that climate change is happening?",
+    "dc24_cc2": "What do you think is the main cause of climate change?"
+  },
+  "Media and Social Networks": {
+    "dc24_news_time_spent": "On average, how much time do you usually spend watching, reading, and listening to news each day?",
+    "dc24_soc_media_freq": "How often do you use social media (Facebook, Twitter, Snapchat, TikTok, Instagram, etc.)?",
+    "dc24_disc_pol_freq": "How often do you discuss politics with family and friends?",
+    "dc24_disc_pol_disag": "During the last month, how often have you discussed politics with someone who disagreed with your political views?"
+  },
+  "Social Network": {
+    "dc24_soc_net_size": "Thinking about people who are not family members or relatives, how many close friends do you have?",
+    "dc24_soc_net_types": "How many of your close friends belong to a visibly different ethnicity than you?"
+  },
+  "Attitudes - Redistribution": {
+    "dc24_inequality_gap": "How much do you think should be done to reduce the gap between the rich and the poor in Canada?"
+  },
+  "Attitudes - Immigration 3": {
+    "dc24_imm_level": "Immigrants - you think Canada should admit:",
+    "dc24_refugee_level": "Refugess - Do you think Canada should admit:"
+  },
+  "Groups Thermometers": {
+    "dc24_groups_therm_1_1": "How do you feel about the following groups in Canada? Set the slider to any number from 0 to 100, where 0 means you really dislike the group and 100 means you really like the group: People of Chinese-origin",
+    "dc24_groups_therm_1_2": "How do you feel about the following groups in Canada? Set the slider to any number from 0 to 100, where 0 means you really dislike the group and 100 means you really like the group: Racial minorities",
+    "dc24_groups_therm_1_4": "How do you feel about the following groups in Canada? Set the slider to any number from 0 to 100, where 0 means you really dislike the group and 100 means you really like the group: Muslims living in Canada",
+    "dc24_groups_therm_1_5": "How do you feel about the following groups in Canada? Set the slider to any number from 0 to 100, where 0 means you really dislike the group and 100 means you really like the group: Francophones",
+    "dc24_groups_therm_1_6": "How do you feel about the following groups in Canada? Set the slider to any number from 0 to 100, where 0 means you really dislike the group and 100 means you really like the group: Feminists",
+    "dc24_groups_therm_1_7": "How do you feel about the following groups in Canada? Set the slider to any number from 0 to 100, where 0 means you really dislike the group and 100 means you really like the group: Lesbians and gay men"
+  },
+  "Financial Situation Ladder Questions": {
+    "dc24_ladder_current_1": "Where would you place your current financial situation on the scale below, where 1 means the worst life you can imagine and 5 means the best life you can imagine?",
+    "dc24_ladder_future_1": "Where would you place your expected financial situation in 5 years on the scale below, where 1 means the worst life you can imagine and 5 means the best life you can imagine?"
+  },
+  "Attitudes Intro and Mail Trust": {
+    "dc24_mailtrust": "Voting by mail in Canada is equally as trustworthy as voting in person."
+  },
+  "Attitudes - Social Conservatism 2": {
+    "dc24_newerlife": "Newer lifestyles are contributing to the breakdown of our society."
+  },
+  "Civil Rights": {
+    "dc24_civilrights_2_1": "Here is a list of some policy positions. For each policy, indicate to what extent you support or oppose it: Allowing the police to stop or detain people of a different race or ethnicity if these groups are thought to be more likely to commit crimes",
+    "dc24_civilrights_2_2": "Here is a list of some policy positions. For each policy, indicate to what extent you support or oppose it: Allowing police to investigate people who participate in nonviolent protests against the government"
+  },
+  "Government Office: Contact": {
+    "dc24_feedback_screen_1": "Have you contacted a government office for any of the following reasons in the past 12 months? Select all that apply."
+  },
+  "Government Office: Benefits (Part 1)": {
+    "dc24_feedback_ben_1": "Thinking about when you contacted a government office to apply for or renew benefits, can you tell us what types of benefits you were contacting the government about? Select all that apply."
+  },
+  "Government Office: Benefits (Part 2)": {
+    "dc24_feedback_ben_2": "Thinking about when you contacted a government office to apply for or renew benefits, can you tell us what types of benefits you were contacting the government about? Select all that apply.",
+    "dc24_feedback_ben_3": "Thinking about when you contacted a government office to apply for or renew benefits, can you tell us what types of benefits you were contacting the government about? Select all that apply.",
+    "dc24_feedback_ben_4": "Thinking about when you contacted a government office to apply for or renew benefits, can you tell us what types of benefits you were contacting the government about? Select all that apply.",
+    "dc24_feedback_ben_6": "Thinking about when you contacted a government office to apply for or renew benefits, can you tell us what types of benefits you were contacting the government about? Select all that apply.",
+    "dc24_feedback_ben_5": "Thinking about when you contacted a government office to apply for or renew benefits, can you tell us what types of benefits you were contacting the government about? Select all that apply."
+  },
+  "Government Office: Documents Follow-Up (Part 1)": {
+    "dc24_feedback_doc_1": "Thinking about when you applied or renewed official documents, can you tell us what type of document you applied for or renewed? Select all that apply",
+    "dc24_feedback_doc_2": "Thinking about when you applied or renewed official documents, can you tell us what type of document you applied for or renewed? Select all that apply"
+  },
+  "Government Office: Documents Follow-Up (Part 2)": {
+    "dc24_feedback_doc_3": "Thinking about when you applied or renewed official documents, can you tell us what type of document you applied for or renewed? Select all that apply",
+    "dc24_feedback_doc_4": "Thinking about when you applied or renewed official documents, can you tell us what type of document you applied for or renewed? Select all that apply"
+  },
+  "Government Office: Local Problem": {
+    "dc24_feedback_com": "Thinking about when you contacted the government about a problem in your neighborhood or community, were you satisfied or unsatisfied with the outcome?",
+    "dc24_feedback_com_tr_1": "Thinking about this contact about a problem in your neighborhood or community, how would you rate the treatment that you received on the following scales? Very unhelpful - Very helpful",
+    "dc24_feedback_com_tr_2": "Thinking about this contact about a problem in your neighborhood or community, how would you rate the treatment that you received on the following scales? Very disrespectful - Very respectful",
+    "dc24_feedback_com_tr_3": "Thinking about this contact about a problem in your neighborhood or community, how would you rate the treatment that you received on the following scales? Very slow - Very fast",
+    "dc24_feedback_com_tr_4": "Thinking about this contact about a problem in your neighborhood or community, how would you rate the treatment that you received on the following scales? Made me feel badly about myself - Made me feel good about myself"
+  },
+  "Ties with US": {
+    "dc24_ties_us": "Do you think Canada's ties with the United States should be..."
+  },
+  "Ties with China": {
+    "dc24_ties_china": "Do you think Canada's ties with China should be..."
+  },
+  "Party ID": {
+    "dc24_party_id": "In federal politics, do you usually think of yourself as a: "
+  },
+  "Party Strength": {
+    "dc24_pid_strength": "How strongly about the federal party do you feel?",
+    "dc24_pid_connection": "When you meet someone who supports your party, do you feel a kind of instant connection with that person?",
+    "dc24_pid_insult": "If someone you know criticizes your party, do you feel personally insulted?"
+  },
+  "Participation 1": {
+    "dc24_participate_pro_1": "Here are some things people can do to participate in politics. Please indicate how many times you've done these things over the past 12 months: Attended a rally or participated in a protest or demonstration"
+  },
+  "Participation 2": {
+    "dc24_participate_pro_2": "Here are some things people can do to participate in politics. Please indicate how many times you've done these things over the past 12 months: Boycotted or bought products for ethical, environmental, or political reasons",
+    "dc24_participate_pro_3": "Here are some things people can do to participate in politics. Please indicate how many times you've done these things over the past 12 months: Signed a petition in person or online",
+    "dc24_participate_pro_4": "Here are some things people can do to participate in politics. Please indicate how many times you've done these things over the past 12 months: Volunteered for a political party or candidate",
+    "dc24_participate_pro_5": "Here are some things people can do to participate in politics. Please indicate how many times you've done these things over the past 12 months: Donated money to a political candidate or party"
+  },
+  "Participation 3": {
+    "dc24_participate_civ_1": "Here are some things people can do to participate in politics. Please indicate how many times you've done these things over the past 12 months: Volunteered for a group or organization like a school, a religious organization, or sports or community associations",
+    "dc24_participate_civ_2": "Here are some things people can do to participate in politics. Please indicate how many times you've done these things over the past 12 months: Donated money to a charitable cause",
+    "dc24_participate_civ_3": "Here are some things people can do to participate in politics. Please indicate how many times you've done these things over the past 12 months: Used social media to discuss politics or political issues"
+  },
+  "Ideology": {
+    "dc24_lr_self_1": "In politics, people sometimes talk of left and right. Where would you place yourself on this scale?",
+    "dc24_lr_party_1": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? Liberal Party",
+    "dc24_lr_party_2": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? Conservative Party",
+    "dc24_lr_party_3": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? NDP",
+    "dc24_lr_party_4": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? Bloc Québécois",
+    "dc24_lr_party_5": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? Green Party",
+    "dc24_lr_party_6": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? People's Party of Canada"
+  },
+  "Foreign Policy": {
+    "dc24_foreign_pol_protect": "Below is a list of possible foreign policy goals that Canada might have. For each one, please select whether you think it should be a very important, somewhat important, or not at all important policy goal for Canada: Protecting weaker nations from foreign aggression.",
+    "dc24_foreign_pol_support": "Below is a list of possible foreign policy goals that Canada might have. For each one, please select whether you think it should be a very important, somewhat important, or not at all important policy goal for Canada: Supporting our NATO allies in their military commitments.",
+    "dc24_foreign_pol_provide": "Below is a list of possible foreign policy goals that Canada might have. For each one, please select whether you think it should be a very important, somewhat important, or not at all important policy goal for Canada: Providing aid to countries undergoing war.",
+    "dc24_foreign_pol_increase": "Below is a list of possible foreign policy goals that Canada might have. For each one, please select whether you think it should be a very important, somewhat important, or not at all important policy goal for Canada: Increasing our defense spending to ensure we can protect our citizens.",
+    "dc24_foreign_pol_ukr": "Thinking about the war between Russia and Ukraine, do you think Canada should do…"
+  },
+  "Election Satisfaction": {
+    "dc24_emb_satif": "How satisfied are you with the way Elections Canada runs federal elections?"
+  },
+  "Religion Part 1": {
+    "dc24_immig_year": "In what year did you come to live in Canada?"
+  },
+  "Additional Demographics": {
+    "dc24_health_physical": "Compared to other people your age, how would you describe your physical health?",
+    "dc24_health_mental": "Compared to other people your age, how would you describe your mental health?",
+    "dc24_social_iso_1": "The next questions are about how you feel about different aspects of your life. For each one, tell me how often you feel that way: How often do you feel that you lack companionship? ",
+    "dc24_social_iso_2": "The next questions are about how you feel about different aspects of your life. For each one, tell me how often you feel that way: How often do you feel left out?",
+    "dc24_social_iso_3": "The next questions are about how you feel about different aspects of your life. For each one, tell me how often you feel that way: How often do you feel isolated from others?"
+  },
+  "Government Knowledge / Civic Understanding": {
+    "dc24_jurisdiction_1": "Which level of government is primarily responsible for the following policy areas? Employment Insurance",
+    "dc24_jurisdiction_2": "Which level of government is primarily responsible for the following policy areas? Healthcare",
+    "dc24_jurisdiction_3": "Which level of government is primarily responsible for the following policy areas? Primary and Secondary Education",
+    "dc24_jurisdiction_4": "Which level of government is primarily responsible for the following policy areas? Defense Policy",
+    "dc24_jurisdiction_5": "Which level of government is primarily responsible for the following policy areas? Public Transit",
+    "dc24_jurisdiction_6": "Which level of government is primarily responsible for the following policy areas? Sewage and Water"
+  },
+  "Government Service / Satisfaction with Services": {
+    "dc24_feedback_ben_r": "Which program did you most recently contact the government about?",
+    "dc24_feedback_ben_s1": "Thinking about when you contacted the government about the first benefit, were you satisfied or unsatisfied with the outcome?",
+    "dc24_feeback_ben_s2": "Thinking about when you contacted the government about the second benefit, were you satisfied or unsatisfied with the outcome?",
+    "dc24_feedback_ben_tr_1": "Thinking about this contact, how would you rate the treatment that you received on the following scales? Very unhelpful - Very helpful",
+    "dc24_feedback_ben_tr_2": "Thinking about this contact, how would you rate the treatment that you received on the following scales? Very disrespectful - Very respectful",
+    "dc24_feedback_ben_tr_3": "Thinking about this contact, how would you rate the treatment that you received on the following scales? Very slow - Very fast",
+    "dc24_feedback_ben_tr_4": "Thinking about this contact, how would you rate the treatment that you received on the following scales? Made me feel badly about myself - Made me feel good about myself",
+    "dc24_feedback_doc_r": "Which type of document did you apply for most recently?",
+    "dc24_feedback_doc_s1": "Thinking about when you contacted the government about the document you applied for, were you satisfied or unsatisfied with the outcome?",
+    "dc24_feedback_doc_s2": "Thinking about when you contacted the government about the second document you applied for, were you satisfied or unsatisfied with the outcome?",
+    "dc24_feedback_doc_tr_1": "Thinking about this contact about the document, how would you rate the treatment that you received on the following scales? Very unhelpful - Very helpful",
+    "dc24_feedback_doc_tr_2": "Thinking about this contact about the document, how would you rate the treatment that you received on the following scales? Very disrespectful - Very respectful",
+    "dc24_feedback_doc_tr_3": "Thinking about this contact about the document, how would you rate the treatment that you received on the following scales? Very slow - Very fast",
+    "dc24_feedback_doc_tr_4": "Thinking about this contact about the document, how would you rate the treatment that you received on the following scales? Made me feel badly about myself - Made me feel good about myself",
+    "dc24_feedback_com": "Thinking about when you contacted the government about a problem in your neighborhood or community, were you satisfied or unsatisfied with the outcome?",
+    "dc24_feedback_com_tr_1": "Thinking about this contact about a problem in your neighborhood or community, how would you rate the treatment that you received on the following scales? Very unhelpful - Very helpful",
+    "dc24_feedback_com_tr_2": "Thinking about this contact about a problem in your neighborhood or community, how would you rate the treatment that you received on the following scales? Very disrespectful - Very respectful",
+    "dc24_feedback_com_tr_3": "Thinking about this contact about a problem in your neighborhood or community, how would you rate the treatment that you received on the following scales? Very slow - Very fast",
+    "dc24_feedback_com_tr_4": "Thinking about this contact about a problem in your neighborhood or community, how would you rate the treatment that you received on the following scales? Made me feel badly about myself - Made me feel good about myself"
+  },
+  "Political Participation / Party Membership": {
+    "dc24_Q447": "For BC and Quebec residents, Have you ever been a member of a federal, provincial or local/municipal party?",
+    "dc24_Q448": "For non BC and Quebec residents, Have you ever been a member of a federal, provincial or local/municipal party?"
+  }
+}
