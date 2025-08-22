@@ -3,27 +3,27 @@ library(jsonlite)
 library(dplyr)
 library(stringr)
 
-# 1. Read .dta file and filter youth
+# 1. Read .dta file
 ces2021dtafile <- read_dta("C:/Users/jchen/Downloads/dataverse_files/2021 Canadian Election Study v2.0.dta")
-ces2021_filtered_dta_v3 <- ces2021dtafile %>% filter(cps21_age < 30)
+ces2021_filtered_dta_all <- ces2021dtafile 
 
 # 2. Read label map (JSON file with variable names you want to keep)
 ces2021_label_map_json <- fromJSON("C:/Users/jchen/YouthEmploymentEducationProject/data/variable_label_map.json")
 json_vars <- if (is.list(ces2021_label_map_json)) names(ces2021_label_map_json) else ces2021_label_map_json
 
 # 3. Subset only columns in JSON
-ces2021_filtered_dta_v3 <- ces2021_filtered_dta_v3 %>% select(all_of(json_vars))
+ces2021_filtered_dta_all <- ces2021_filtered_dta_all %>% select(all_of(json_vars))
 
 # Convert -99 to NA
-ces2021_filtered_dta_v3[ces2021_filtered_dta_v3 == -99] <- NA
+ces2021_filtered_dta_all[ces2021_filtered_dta_all == -99] <- NA
 
 # --- Multi-select grouping and combining ---
 # 4. Identify multi-select column groups
-multi_cols <- grep("_\\d+$", names(ces2021_filtered_dta_v3), value = TRUE)
+multi_cols <- grep("_\\d+$", names(ces2021_filtered_dta_all), value = TRUE)
 prefixes <- unique(str_remove(multi_cols, "_\\d+$"))
 
 # 5. Exclude multi-columns with >2 distinct (non -99) values (not binary)
-multi_data <- ces2021_filtered_dta_v3[, multi_cols]
+multi_data <- ces2021_filtered_dta_all[, multi_cols]
 excluded_cols <- multi_data %>%
   summarise(across(everything(), ~ length(setdiff(unique(.), -99)) > 2)) %>%
   select(where(identity)) %>%
@@ -67,7 +67,7 @@ combine_multiselect <- function(data, prefix) {
 }
 
 for (prefix in prefixes_to_combine) {
-  ces2021_filtered_dta_v3 <- combine_multiselect(ces2021_filtered_dta_v3, prefix)
+  ces2021_filtered_dta_all <- combine_multiselect(ces2021_filtered_dta_all, prefix)
 }
 
 # Function to convert value codes to labels where applicable
@@ -88,11 +88,11 @@ convert_to_labels_with_code <- function(column) {
 }
 
 # Apply to all columns in-place (and stay named as-is)
-ces2021_filtered_dta_v3 <- ces2021_filtered_dta_v3 %>%
+ces2021_filtered_dta_all <- ces2021_filtered_dta_all %>%
   mutate(across(everything(), convert_to_labels_with_code))
 
 # Replace column names with labels from loaded JSON (ces2021_label_map_json)
-names(ces2021_filtered_dta_v3) <- sapply(names(ces2021_filtered_dta_v3), function(col) {
+names(ces2021_filtered_dta_all) <- sapply(names(ces2021_filtered_dta_all), function(col) {
   label <- ces2021_label_map_json[[col]]
   if (!is.null(label) && nzchar(label)) {
     label
@@ -102,5 +102,5 @@ names(ces2021_filtered_dta_v3) <- sapply(names(ces2021_filtered_dta_v3), functio
 })
 
 library(jsonlite)
-write_json(ces2021_filtered_dta_v3, 
-           "C:/Users/jchen/YouthEmploymentEducationProject/react-d3/public/ces2021_data_new.json", pretty = TRUE)
+write_json(ces2021_filtered_dta_all, 
+           "C:/Users/jchen/Downloads/ces_2021_data_all.json", pretty = TRUE)

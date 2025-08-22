@@ -83,6 +83,18 @@ function Navbar() {
                 Employment
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                to="/dc2024"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link border-bottom border-primary border-2"
+                    : "nav-link"
+                }
+              >
+                Democracy Checkup 2024
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

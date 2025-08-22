@@ -21,24 +21,28 @@ function wrapText(text, maxLineLength = 50) {
 }
 
 function CES2021ByCategory() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [labelMap, setLabelMap] = useState({});
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedLabel, setSelectedLabel] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [under30, setUnder30] = useState(false); // toggle for under 30
 
   useEffect(() => {
+    setLoading(true);
     Promise.all([
-      fetch("./ces2021_data_new.json").then((res) => res.json()),
+      fetch(
+        under30 ? "./aggregated_survey_u30.json" : "./aggregated_survey.json"
+      ).then((res) => res.json()),
       fetch("./categorized_variable_label_map.json").then((res) => res.json()),
     ])
-      .then(([dataJson, labelMapJson]) => {
-        setData(dataJson);
+      .then(([aggData, labelMapJson]) => {
+        setData(aggData);
         setLabelMap(labelMapJson);
       })
       .catch((err) => console.error("Failed to load:", err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [under30]); // refetch when toggle changes
 
   const reverseLabelMap = React.useMemo(() => {
     const map = {};
@@ -75,37 +79,31 @@ function CES2021ByCategory() {
     height: 600,
   };
 
-  if (data.length > 0 && selectedLabel) {
-    const values = data.map((row) => row[selectedLabel]).filter(Boolean);
-    const isMultiSelect = selectedLabel.includes("Select all that apply");
+  if (data && selectedLabel) {
+    const countsRaw = data[selectedLabel] || {};
     const counts = {};
 
-    if (isMultiSelect) {
-      values.forEach((val) =>
-        val
-          .split("|")
-          .map((v) => v.trim())
-          .forEach((entry) => {
-            counts[entry] = (counts[entry] || 0) + 1;
-          })
-      );
-    } else {
-      values.forEach((val) => {
-        const key = val || "NA";
-        counts[key] = (counts[key] || 0) + 1;
-      });
-    }
+    // Handle multi-select by splitting "|" if present
+    Object.entries(countsRaw).forEach(([key, value]) => {
+      const isMultiSelect = key.includes("|");
+      if (isMultiSelect) {
+        key.split("|").forEach((entry) => {
+          const trimmed = entry.trim();
+          counts[trimmed] = (counts[trimmed] || 0) + value;
+        });
+      } else {
+        counts[key] = (counts[key] || 0) + value;
+      }
+    });
 
+    // Sort entries by numeric code before the colon
     const sortedEntries = Object.entries(counts).sort((a, b) => {
-      const numA = parseInt(a[0]);
-      const numB = parseInt(b[0]);
-      return isNaN(numA) || isNaN(numB) ? a[0].localeCompare(b[0]) : numA - numB;
+      const numA = parseInt(a[0].split(":")[0]);
+      const numB = parseInt(b[0].split(":")[0]);
+      return numA - numB;
     });
 
-    const labels = sortedEntries.map(([key]) => {
-      const parts = key.split(": ");
-      return parts.length > 1 ? parts.slice(1).join(": ") : key;
-    });
+    const labels = sortedEntries.map(([key]) => key.split(": ")[1] || key);
     const sortedCounts = sortedEntries.map(([_, count]) => count);
 
     plotData = {
@@ -123,7 +121,7 @@ function CES2021ByCategory() {
         xanchor: "center",
       },
       xaxis: { tickangle: -25 },
-      yaxis: { title: {text: "Number of People", font: {color: "#333"}} },
+      yaxis: { title: { text: "Number of People", font: { color: "#333" } } },
       margin: { t: 140, b: 140, l: 80, r: 50 },
       width: 1000,
       height: 600,
@@ -144,7 +142,23 @@ function CES2021ByCategory() {
     <div className="container py-5">
       <div className="text-center mb-5">
         <h2 className="fw-bold">CES2021 Data by Category</h2>
-        <p className="text-muted">Explore CES2021 responses by selecting a category and question.</p>
+        <p className="text-muted">
+          Explore CES2021 responses by selecting a category and question.
+        </p>
+      </div>
+
+      <div className="d-flex justify-content-center align-items-center mb-3">
+        <span className="me-3">
+          {under30
+            ? "Currently Viewing: Age under 30"
+            : "Currently Viewing: All Ages"}
+        </span>
+        <button
+          className={`btn ${under30 ? "btn-primary" : "btn-outline-primary"}`}
+          onClick={() => setUnder30(!under30)}
+        >
+          {under30 ? "Click to view all ages" : "Click to view age under 30"}
+        </button>
       </div>
 
       <div className="row justify-content-center mb-4">
@@ -152,7 +166,11 @@ function CES2021ByCategory() {
           <label className="form-label fw-semibold">Select a category:</label>
           <Select
             options={categoryOptions}
-            value={selectedCategory ? { value: selectedCategory, label: selectedCategory } : null}
+            value={
+              selectedCategory
+                ? { value: selectedCategory, label: selectedCategory }
+                : null
+            }
             onChange={(opt) => {
               setSelectedCategory(opt.value);
               setSelectedLabel(null);
@@ -164,7 +182,11 @@ function CES2021ByCategory() {
           <label className="form-label fw-semibold">Select a question:</label>
           <Select
             options={questionOptions}
-            value={selectedLabel ? { value: selectedLabel, label: selectedLabel } : null}
+            value={
+              selectedLabel
+                ? { value: selectedLabel, label: selectedLabel }
+                : null
+            }
             onChange={(opt) => setSelectedLabel(opt.value)}
             isDisabled={!selectedCategory}
           />
@@ -172,7 +194,11 @@ function CES2021ByCategory() {
       </div>
 
       <div className="card shadow-sm p-4 mb-5">
-        <Plot data={[plotData]} layout={plotLayout} config={{ displayModeBar: false }} />
+        <Plot
+          data={[plotData]}
+          layout={plotLayout}
+          config={{ displayModeBar: false }}
+        />
       </div>
     </div>
   );

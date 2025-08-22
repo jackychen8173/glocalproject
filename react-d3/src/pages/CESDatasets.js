@@ -3,6 +3,8 @@ import CES2021Header from "../components/CES2021Header";
 import CES2021Footer from "../components/CES2021Footer";
 import CES2019Online from "../components/CES2019Online";
 import CES2021ByCategory from "../components/CES2021ByCategory";
+import CES2021ByCategoryAll from "../components/CES2021ByCategoryAll";
+import CES2021ByCategoryAllAndU30 from "../components/CES2021ByCategoryAllAndU30";
 
 function CESDatasets() {
   return (
@@ -50,7 +52,7 @@ function CESDatasets() {
       {/* Section 1: CES 2021 */}
       <section className="mb-5">
         {/* <CES2021V3 /> */}
-        <CES2021ByCategory />
+        <CES2021ByCategoryAllAndU30 />
         <CES2021Footer />
       </section>
 
@@ -69,6 +71,20 @@ function CESDatasets() {
           >
             CES 2019 Online Dataset
           </a>
+          <div>
+            Stephenson, Laura B., Allison Harell, Daniel Rubenson, and Peter
+            John Loewen.
+            <em> The 2019 Canadian Election Study – Online Survey. </em>{" "}
+            [dataset].{" "}
+            <a
+              href="https://doi.org/10.7910/DVN/DUS88V"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://doi.org/10.7910/DVN/DUS88V
+            </a>
+            . Harvard Dataverse.
+          </div>
         </footer>
       </section>
     </div>

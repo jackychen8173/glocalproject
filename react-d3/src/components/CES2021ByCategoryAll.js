@@ -21,7 +21,7 @@ function wrapText(text, maxLineLength = 50) {
 }
 
 function CES2021ByCategory() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [labelMap, setLabelMap] = useState({});
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedLabel, setSelectedLabel] = useState(null);
@@ -29,11 +29,11 @@ function CES2021ByCategory() {
 
   useEffect(() => {
     Promise.all([
-      fetch("./ces2021_data_new.json").then((res) => res.json()),
+      fetch("./aggregated_survey.json").then((res) => res.json()),
       fetch("./categorized_variable_label_map.json").then((res) => res.json()),
     ])
-      .then(([dataJson, labelMapJson]) => {
-        setData(dataJson);
+      .then(([aggData, labelMapJson]) => {
+        setData(aggData);
         setLabelMap(labelMapJson);
       })
       .catch((err) => console.error("Failed to load:", err))
@@ -75,37 +75,32 @@ function CES2021ByCategory() {
     height: 600,
   };
 
-  if (data.length > 0 && selectedLabel) {
-    const values = data.map((row) => row[selectedLabel]).filter(Boolean);
-    const isMultiSelect = selectedLabel.includes("Select all that apply");
+  if (data && selectedLabel) {
+    const countsRaw = data[selectedLabel] || {};
     const counts = {};
 
-    if (isMultiSelect) {
-      values.forEach((val) =>
-        val
-          .split("|")
-          .map((v) => v.trim())
-          .forEach((entry) => {
-            counts[entry] = (counts[entry] || 0) + 1;
-          })
-      );
-    } else {
-      values.forEach((val) => {
-        const key = val || "NA";
-        counts[key] = (counts[key] || 0) + 1;
-      });
-    }
+    // Handle multi-select by splitting "|" if present
+    Object.entries(countsRaw).forEach(([key, value]) => {
+      const isMultiSelect = key.includes("|");
+      if (isMultiSelect) {
+        key.split("|").forEach((entry) => {
+          const trimmed = entry.trim();
+          counts[trimmed] = (counts[trimmed] || 0) + value;
+        });
+      } else {
+        counts[key] = (counts[key] || 0) + value;
+      }
+    });
 
+    // Sort entries by numeric code before the colon
     const sortedEntries = Object.entries(counts).sort((a, b) => {
-      const numA = parseInt(a[0]);
-      const numB = parseInt(b[0]);
-      return isNaN(numA) || isNaN(numB) ? a[0].localeCompare(b[0]) : numA - numB;
+      const numA = parseInt(a[0].split(":")[0]);
+      const numB = parseInt(b[0].split(":")[0]);
+      return numA - numB;
     });
 
-    const labels = sortedEntries.map(([key]) => {
-      const parts = key.split(": ");
-      return parts.length > 1 ? parts.slice(1).join(": ") : key;
-    });
+    // Prepare labels and counts
+    const labels = sortedEntries.map(([key]) => key.split(": ")[1] || key);
     const sortedCounts = sortedEntries.map(([_, count]) => count);
 
     plotData = {
@@ -123,7 +118,7 @@ function CES2021ByCategory() {
         xanchor: "center",
       },
       xaxis: { tickangle: -25 },
-      yaxis: { title: {text: "Number of People", font: {color: "#333"}} },
+      yaxis: { title: { text: "Number of People", font: { color: "#333" } } },
       margin: { t: 140, b: 140, l: 80, r: 50 },
       width: 1000,
       height: 600,

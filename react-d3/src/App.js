@@ -9,6 +9,7 @@ import CESDatasetsAnalysis from "./pages/CESDatasetsAnalysis";
 import Education from "./pages/Education";
 import Layout from "./Layout";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DC2024 from "./pages/DC2024";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/employment" element={<Employment />} />
           <Route path="/education" element={<Education />} />\
           <Route path="/cesdatasets" element={<CESDatasets />} />
+          <Route path="/dc2024" element={<DC2024 />} />
         </Route>
       </Routes>
     </Router>
