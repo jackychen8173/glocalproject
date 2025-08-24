@@ -131,7 +131,7 @@
     "4: Not at all satisfied": 1329,
     "5: Don't know/ Prefer not to answer": 582
   },
-  "How interested are you in politics generally? Set the slider toa number from 0 to 10, where 0 means no interest at all, and 10 means a great deal ofinterest.": {
+  "How interested are you in politics generally? Set the slider to a number from 0 to 10, where 0 means no interest at all, and 10 means a great deal of interest.": {
     "6": 2543,
     "2": 942,
     "3": 1293,
@@ -144,7 +144,7 @@
     "0": 577,
     "1": 551
   },
-  "How interested are you in this federal election? Set the sliderto a number from 0 to 10, where 0 means no interest at all, and 10 means a great dealof interest.": {
+  "How interested are you in this federal election? Set the slider to a number from 0 to 10, where 0 means no interest at all, and 10 means a great deal of interest.": {
     "7": 3227,
     "5": 1803,
     "10": 3203,
@@ -2906,13 +2906,13 @@
     "1: A good thing": 2582,
     "4: Prefer not to answer": 134
   },
-  "Do you think Canada should admit:": {
+  "Immigrants - Do you think Canada should admit:": {
     "2: Fewer immigrants": 6122,
     "3: About the same number of immigrants as now": 8750,
     "1: More immigrants": 5046,
     "4: Don’t know/ Prefer not to answer": 1050
   },
-  "Do you think Canada should admit:.1": {
+  "Refugees - Do you think Canada should admit:": {
     "2: Fewer refugees": 3463,
     "3: About the same number of refugees as now": 4640,
     "1: More refugees": 2710,
@@ -3009,7 +3009,7 @@
     "3: Get worse": 3376,
     "4: Don't know/ Prefer not to answer": 1035
   },
-  "Have you applied for any of the following COVID relief programs? Please select all that apply": {
+  "Have you applied for any of the following COVID relief programs? Select all that apply": {
     "8: None": 15815,
     "1: Canada Emergency Response Benefit (CERB)": 2854,
     "1: Canada Emergency Response Benefit (CERB)| 4: Canada Recovery Sickness Benefit (CRSB)": 44,
@@ -3105,7 +3105,7 @@
     "2: A lot": 323,
     "1: A great deal": 193
   },
-  "How satisfied are you with the performance of your provincial government under your premier": {
+  "How satisfied are you with the performance of your provincial government under your premier?": {
     "1: Very satisfied": 3585,
     "2: Fairly satisfied": 7464,
     "5: Don't know/ Prefer not to answer": 683,
@@ -5169,7 +5169,7 @@
     "1: A lot": 4948,
     "4: Don't know/ Prefer not to answer": 60
   },
-  "During the campaign, did a party or candidate contact you in person orby any other means?": {
+  "During the campaign, did a party or candidate contact you in person or by any other means?": {
     "2: No": 8948,
     "1: Yes": 5916,
     "3: Don't know/ Prefer not to answer": 205
@@ -7674,7 +7674,7 @@
     "7: $150,001 to $200,000": 19,
     "8: More than $200,000": 11
   },
-  "Do you recall which parties or candidates contacted you? (Please select all that apply)": {
+  "Do you recall which parties or candidates contacted you? (Select all that apply)": {
     "2: Conservative Party": 1606,
     "2: Conservative Party| 3: ndp": 183,
     "1: Liberal Party": 1104,
@@ -8104,41 +8104,41 @@
     "6: Don't know/ Prefer not to answer": 196,
     "4: A little": 1715
   },
-  "Thinking about friends who you talk politics with, are they someone who... Shares your political views": {
-    "2: {q://QID361/ChoiceTextEntryValue/2}": 302,
-    "1: {q://QID361/ChoiceTextEntryValue/1}": 983,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 1378,
-    "3: {q://QID361/ChoiceTextEntryValue/3}": 212,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}": 615,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 3: {q://QID361/ChoiceTextEntryValue/3}": 328,
-    "2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 253
+  "Thinking about friends who you talk politics with, are they someone who... Shares your political views (Select all that apply)": {
+    "2: Friend 2": 302,
+    "1: Friend 1": 983,
+    "1: Friend 1| 2: Friend 2| 3: Friend 3": 1378,
+    "3: Friend 3": 212,
+    "1: Friend 1| 2: Friend 2": 615,
+    "1: Friend 1| 3: Friend 3": 328,
+    "2: Friend 2| 3: Friend 3": 253
   },
-  "Thinking about friends who you talk politics with, are they someone who... Shares your ethnic background": {
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 3: {q://QID361/ChoiceTextEntryValue/3}": 159,
-    "2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 225,
-    "1: {q://QID361/ChoiceTextEntryValue/1}": 531,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 2169,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}": 542,
-    "3: {q://QID361/ChoiceTextEntryValue/3}": 177,
+  "Thinking about friends who you talk politics with, are they someone who... Shares your ethnic background (Select all that apply)": {
+    "1: Friend 1| 3: Friend 3": 159,
+    "2: Friend 2| 3: Friend 3": 225,
+    "1: Friend 1": 531,
+    "1: Friend 1| 2: Friend 2| 3: Friend 3": 2169,
+    "1: Friend 1| 2: Friend 2": 542,
+    "3: Friend 3": 177,
     "2: {q://QID361/ChoiceTextEntryValue/2}": 258
   },
-  "Thinking about friends who you talk politics with, are they someone who... Has the same gender as you": {
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}": 439,
-    "3: {q://QID361/ChoiceTextEntryValue/3}": 509,
-    "1: {q://QID361/ChoiceTextEntryValue/1}": 507,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 617,
-    "2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 728,
-    "2: {q://QID361/ChoiceTextEntryValue/2}": 694,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 3: {q://QID361/ChoiceTextEntryValue/3}": 388
+  "Thinking about friends who you talk politics with, are they someone who... Has the same gender as you (Select all that apply)": {
+    "1: Friend 1| 2: Friend 2": 439,
+    "3: Friend 3": 509,
+    "1: Friend 1": 507,
+    "1: Friend 1| 2: Friend 2| 3: Friend 3": 617,
+    "2: Friend 2| 3: Friend 3": 728,
+    "2: Friend 2": 694,
+    "1: Friend 1| 3: Friend 3": 388
   },
-  "Thinking about friends who you talk politics with, are they someone who... Has an immigrant background": {
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 248,
-    "1: {q://QID361/ChoiceTextEntryValue/1}": 379,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 3: {q://QID361/ChoiceTextEntryValue/3}": 96,
-    "2: {q://QID361/ChoiceTextEntryValue/2}": 288,
-    "3: {q://QID361/ChoiceTextEntryValue/3}": 302,
-    "2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 89,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}": 130
+  "Thinking about friends who you talk politics with, are they someone who... Has an immigrant background (Select all that apply)": {
+    "1: Friend 1| 2: Friend 2| 3: Friend 3": 248,
+    "1: Friend 1": 379,
+    "1: Friend 1| 3: Friend 3": 96,
+    "2: Friend 2": 288,
+    "3: Friend 3": 302,
+    "2: Friend 2| 3: Friend 3": 89,
+    "1: Friend 1| 2: Friend 2": 130
   },
   "For voters by mail, Did you find the process of requesting a mail-in ballot and voting by mail easy or difficult?": {
     "1: Very easy": 911,
@@ -8462,14 +8462,14 @@
     "92": 3,
     "97": 2
   },
-  "Thinking about friends who you talk politics with, are they someone who... Identifies as Indigenous": {
-    "1: {q://QID361/ChoiceTextEntryValue/1}": 131,
-    "3: {q://QID361/ChoiceTextEntryValue/3}": 66,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 37,
-    "2: {q://QID361/ChoiceTextEntryValue/2}": 91,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 3: {q://QID361/ChoiceTextEntryValue/3}": 5,
-    "1: {q://QID361/ChoiceTextEntryValue/1}| 2: {q://QID361/ChoiceTextEntryValue/2}": 21,
-    "2: {q://QID361/ChoiceTextEntryValue/2}| 3: {q://QID361/ChoiceTextEntryValue/3}": 7
+  "Thinking about friends who you talk politics with, are they someone who... Identifies as Indigenous (Select all that apply)": {
+    "1: Friend 1": 131,
+    "3: Friend 3": 66,
+    "1: Friend 1| 2: Friend 2| 3: Friend 3": 37,
+    "2: Friend 2": 91,
+    "1: Friend 1| 3: Friend 3": 5,
+    "1: Friend 1| 2: Friend 2": 21,
+    "2: Friend 2| 3: Friend 3": 7
   },
   "For those unlikely to vote, if you choose to vote in the current election, what voting method do you think you would use? (Select one)": {
     "2: In person, at an advance poll": 88,
@@ -8522,7 +8522,7 @@
     "1: Yes": 1341,
     "2: No": 109
   },
-  "Are you:": {
+  "Vaccination - Are you:": {
     "4: Unable to get vaccinated for health reasons": 95,
     "3: Not planning to get vaccinated": 832,
     "5: Unsure what you will do": 336,
@@ -8530,7 +8530,7 @@
     "6: Prefer not to answer": 33,
     "1: Waiting for a scheduled appointment": 23
   },
-  "If you become a Canadian citizen, how likely are you to vote in thefirst election for which you are eligible?": {
+  "If you become a Canadian citizen, how likely are you to vote in the first election for which you are eligible?": {
     "1: Certain to vote": 384,
     "2: Likely to vote": 142,
     "5: Don't know/ Prefer not to answer": 34,

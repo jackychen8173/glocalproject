@@ -7,6 +7,7 @@
     "cps21_province": "In which province or territory are you currently living?",
     "cps21_education": "What is the highest level of education that you have completed?",
     "cps21_religion": "Please indicate your religion, if you have one?",
+    "cps21_rel_imp": "In your life, you would say religion is:",
     "cps21_bornin_canada": "Were you born in Canada?",
     "cps21_vismin_1": "Do you identify as any of the following? (Select all that apply)",
     "cps21_two_spirit": "Are you Two-Spirit?",
@@ -24,11 +25,12 @@
     "pes21_parents_born": "Was either or both of your parents born outside of Canada?",
     "pes21_rural_urban": "Do you live in…",
     "pes21_lived": " For how many years have you lived in your current city or community?",
-    "pes21_occ_cat": "Which of the following broad categories best describes your occupation? If you do not work currently, select the category of your most recent job"
+    "pes21_occ_cat": "Which of the following broad categories best describes your occupation? If you do not work currently, select the category of your most recent job",
+    "cps21_property_1": "Do you or a member of your household own a residence (for example, a home or an apartment), own a business (for example, a piece of property, a farm, or livestock), have stocks or bonds, or have savings? Select all that apply."
   },
   "Political Interest": {
-    "cps21_interest_gen_1": "How interested are you in politics generally? Set the slider toa number from 0 to 10, where 0 means no interest at all, and 10 means a great deal ofinterest.",
-    "cps21_interest_elxn_1": "How interested are you in this federal election? Set the sliderto a number from 0 to 10, where 0 means no interest at all, and 10 means a great dealof interest.",
+    "cps21_interest_gen_1": "How interested are you in politics generally? Set the slider to a number from 0 to 10, where 0 means no interest at all, and 10 means a great deal of interest.",
+    "cps21_interest_elxn_1": "How interested are you in this federal election? Set the slider to a number from 0 to 10, where 0 means no interest at all, and 10 means a great deal of interest.",
     "cps21_govt_confusing": "Sometimes, politics and government seem so complicated that a person like me can't really understand what's going on",
     "cps21_govt_say": "People like me don't have any say about what the government does.",
     "cps21_news_cons": "On average, how much time do you usually spend watching, reading, and listening to news each day?",
@@ -41,7 +43,7 @@
   },
   "Voting Behavior": {
     "cps21_v_likely": "On election day, are you...",
-    "cps21_v_likely_pr": "If you become a Canadian citizen, how likely are you to vote in thefirst election for which you are eligible?",
+    "cps21_v_likely_pr": "If you become a Canadian citizen, how likely are you to vote in the first election for which you are eligible?",
     "cps21_howvote1": "For eligible and certain or likely voters, how are you most likely to vote?",
     "cps21_howvote2": "For those already voted, How did you vote?",
     "cps21_howvote3": "For those unlikely to vote, if you choose to vote in the current election, what voting method do you think you would use? (Select one)",
@@ -58,7 +60,13 @@
     "pes21_howvote": "There are many options for people wanting to vote in an election. How did you vote?",
     "pes21_votechoice2021": "Which party did you vote for?",
     "pes21_pr_votechoice": "For those who couldn't vote, If you could have voted in the federal election on Sept. 20, which party would you have voted for?",
-    "pes21_lowturnout": "Low voter turnout weakens Canadian democracy."
+    "pes21_lowturnout": "Low voter turnout weakens Canadian democracy.",
+    "cps21_vote_unlikely": "For Canadians unlikely to vote, If you decide to vote, which party do you think you will vote for?",
+    "cps21_vote_unlike_pr": "For non Canadian citizens that don't know how likely to vote they are to vote, If you could vote in this election, and decided to vote, which party do you think you would vote for?",
+    "cps21_2nd_choice": "For those certain or likely to vote, And which party would be your second choice?",
+    "cps21_2nd_choice_pr": "For those uneligible but certain or likely to vote if become Canadian citizen, And which party would be your second choice?",
+    "cps21_not_vote_for_1": "Are there any parties that you would absolutely not vote for? (Select all that apply)",
+    "cps21_not_vote_for_w_1": "Why would you not vote for this party/these parties? (Select all that apply)"  
   },
   "Party Ratings": {
     "cps21_fed_gov_sat": "How satisfied are you with the performance of the federal government under Justin Trudeau?",
@@ -79,7 +87,7 @@
     "cps21_cand_rating_25": "How do you feel about the candidates in your local riding? Set the slider to a number from 0 to 100, where 0 means you really dislike the candidate and 100 means you really like the candidate: NDP candidate in your riding",
     "cps21_cand_rating_26": "How do you feel about the candidates in your local riding? Set the slider to a number from 0 to 100, where 0 means you really dislike the candidate and 100 means you really like the candidate: Bloc Québécois candidate in your riding",
     "cps21_cand_rating_27": "How do you feel about the candidates in your local riding? Set the slider to a number from 0 to 100, where 0 means you really dislike the candidate and 100 means you really like the candidate: Green candidate in your riding",
-    "cps21_prov_gov_sat": "How satisfied are you with the performance of your provincial government under your premier"
+    "cps21_prov_gov_sat": "How satisfied are you with the performance of your provincial government under your premier?"
   },
   "Policy Opinions": {
     "cps21_lr_parties_1": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? - Liberal Party",
@@ -88,6 +96,7 @@
     "cps21_lr_parties_4": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? - Bloc Québécois",
     "cps21_lr_parties_5": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? - Green Party",
     "cps21_lr_parties_7": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? - People’s Party of Canada",
+    "cps21_lr_scale_bef_1": "Using the same scale where 0 means the left and 10 means the right, where would you place yourself on this scale?",
     "cps21_pos_mailtrust": "Voting by mail is equally as trustworthy as voting in person.",
     "cps21_pos_fptp": "Canada should change its electoral system from “First Past the Post to a “proportional representation” system.",
     "cps21_pos_life": "Individuals who are terminally ill should be allowed to end their lives with the assistance of a doctor.",
@@ -99,6 +108,13 @@
     "cps21_pos_subsid": "The federal government should end all corporate and economic development subsidies.",
     "cps21_pos_trade": "There should be more free trade with other countries, even if it hurts some industries in Canada.",
     "cps21_econ_retro": "Over the past year, has Canada's economy...",
+    "cps21_own_fin_retro": "Over the past year, has your financial situation:",
+    "cps21_ownfinanc_fed": "Have the policies of the federal government made your financial situation...",
+    "cps21_own_fin_future": "Over the next year, do you think your financial situation will:",
+    "cps21_residential_2a": "Accelerate progress on the calls to action from the truth and reconciliation commission.",
+    "cps21_residential_2b": "Federal government funding to identify unmarked graves at all former residential schools.",
+    "cps21_residential_2c": "All governments ceasing court actions against residential school survivors and first nations children.",
+    "cps21_residential_2d": "Renaming buildings and institutions that are named for people who built or ran parts of the residential school system.",
     "cps21_econ_fed_bette": "Have the policies of the federal government made Canada's economy...",
     "cps21_issue_handle_1": "Which party would do the best job at handling each of the following issues? - Healthcare",
     "cps21_issue_handle_2": "Which party would do the best job at handling each of the following issues? - Education",
@@ -116,6 +132,8 @@
     "pes21_equalrights": "We have gone too far in pushing equal rights in this country.",
     "pes21_fitin": "Too many recent immigrants just don't want to fit in to Canadian society.",
     "pes21_immigjobs": "Immigrants take jobs away from other Canadians.",
+    "cps21_imm": "Immigrants - Do you think Canada should admit:",
+    "cps21_refugees": "Refugees - Do you think Canada should admit:",
     "pes21_ab_favors": "Irish, Italian, Jewish and many other minorities overcame prejudice and worked their way up. Aboriginal peoples in Canada should do the same without any special favors.",
     "pes21_ab_deserve": "Over the past few years, Aboriginal peoples have gotten less than they deserve.",
     "pes21_ab_col": "Generations of colonialism and discrimination have created conditions that make it difficult for Aboriginal peoples to work their way out of the lower class.",
@@ -155,7 +173,7 @@
   },
   "COVID-19": {
     "cps21_covid_liberty": "The public health recommendations aimed at slowing the spread of the COVID-19 virus are threatening my liberty",
-    "cps21_covidrelief__1": "Have you applied for any of the following COVID relief programs? Please select all that apply",
+    "cps21_covidrelief__1": "Have you applied for any of the following COVID relief programs? Select all that apply",
     "cps21_covid_sat_1": "How satisfied are you with how each of the following have handled the coronavirus outbreak? - Federal government",
     "cps21_covid_sat_2": "How satisfied are you with how each of the following have handled the coronavirus outbreak? - Provincial government",
     "cps21_covid_sat_3": "How satisfied are you with how each of the following have handled the coronavirus outbreak? - Local government",
@@ -164,10 +182,13 @@
     "cps21_vaccine_mandat_3": "Should vaccination be required to: Work in a hospital",
     "cps21_vaccine1": "Have you been vaccinated?",
     "cps21_vaccine2": "Are you eligible to be vaccinated?",
-    "cps21_vaccine3": "Are you:",
+    "cps21_vaccine3": "Vaccination - Are you:",
     "pes21_votingsafe": "How safe did you feel voting in person?",
     "pes_maileasy": "For voters by mail, Did you find the process of requesting a mail-in ballot and voting by mail easy or difficult?",
-    "pes_maildifficult_1": "For those that found mail difficult, What made the process of voting by mail difficult? (Select all that apply)"
+    "pes_maildifficult_1": "For those that found mail difficult, What made the process of voting by mail difficult? (Select all that apply)",
+    "cps21_comfort1": "For those certian or likely to vote, Regardless of how you plan to vote, how comfortable are you with the idea of voting in person during the coronavirus (COVID-19) pandemic?",
+    "cps21_comfort2": "For those unlikely to vote, If you decide to vote, how comfortable are you with the idea of voting  in person during the coronavirus (COVID-19) pandemic?",
+    "cps21_comfort3": "For those already voted, Regardless of how you voted, how comfortable were you with the idea  of voting in person during the coronavirus (COVID-19) pandemic?"
   },
   "Candidate Preference": {
     "cps21__candidateref": "Which candidate do you want to win the seat in your riding?",
@@ -239,8 +260,8 @@
   },
   "Campaign Contact": {
     "pes21_campatt": "How much attention did you pay to the election campaign?",
-    "pes21_contact1": "During the campaign, did a party or candidate contact you in person orby any other means?",
-    "pes21_contact2_1": "Do you recall which parties or candidates contacted you? (Please select all that apply)"
+    "pes21_contact1": "During the campaign, did a party or candidate contact you in person or by any other means?",
+    "pes21_contact2_1": "Do you recall which parties or candidates contacted you? (Select all that apply)"
   },
   "Vote Confidence & Process": {
     "pes21_conf_inst1_1": "Please indicate how much confidence you have in the following: The federal government",
@@ -273,21 +294,11 @@
     "pes21_partymember": "Have you ever been a member of a provincial or federal political party?"
   },
   "Friends & Social Circles": {
-    "pes21_friendswho_1_1": "Thinking about friends who you talk politics with, are they someone who... Shares your political views",
-    "pes21_friendswho_1_2": "Thinking about friends who you talk politics with, are they someone who... Shares your political views",
-    "pes21_friendswho_1_3": "Thinking about friends who you talk politics with, are they someone who... Shares your political views",
-    "pes21_friendswho_2_1": "Thinking about friends who you talk politics with, are they someone who... Shares your ethnic background",
-    "pes21_friendswho_2_2": "Thinking about friends who you talk politics with, are they someone who... Shares your ethnic background",
-    "pes21_friendswho_2_3": "Thinking about friends who you talk politics with, are they someone who... Shares your ethnic background",
-    "pes21_friendswho_3_1": "Thinking about friends who you talk politics with, are they someone who... Has the same gender as you",
-    "pes21_friendswho_3_2": "Thinking about friends who you talk politics with, are they someone who... Has the same gender as you",
-    "pes21_friendswho_3_3": "Thinking about friends who you talk politics with, are they someone who... Has the same gender as you",
-    "pes21_friendswho_4_1": "Thinking about friends who you talk politics with, are they someone who... Identifies as Indigenous",
-    "pes21_friendswho_4_2": "Thinking about friends who you talk politics with, are they someone who... Identifies as Indigenous",
-    "pes21_friendswho_4_3": "Thinking about friends who you talk politics with, are they someone who... Identifies as Indigenous",
-    "pes21_friendswho_5_1": "Thinking about friends who you talk politics with, are they someone who... Has an immigrant background",
-    "pes21_friendswho_5_2": "Thinking about friends who you talk politics with, are they someone who... Has an immigrant background",
-    "pes21_friendswho_5_3": "Thinking about friends who you talk politics with, are they someone who... Has an immigrant background",
+    "pes21_friendswho_1_1": "Thinking about friends who you talk politics with, are they someone who... Shares your political views (Select all that apply)",
+    "pes21_friendswho_2_1": "Thinking about friends who you talk politics with, are they someone who... Shares your ethnic background (Select all that apply)",
+    "pes21_friendswho_3_1": "Thinking about friends who you talk politics with, are they someone who... Has the same gender as you (Select all that apply)",
+    "pes21_friendswho_4_1": "Thinking about friends who you talk politics with, are they someone who... Identifies as Indigenous (Select all that apply)",
+    "pes21_friendswho_5_1": "Thinking about friends who you talk politics with, are they someone who... Has an immigrant background (Select all that apply)",
     "pes21_discfam": "How often do you discuss politics with family and friends?"
   },
   "Personality & Values": {
@@ -317,18 +328,17 @@
     "pes21_phealth": "Compared to other people your age, how would you describe your physical health?",
     "pes21_mhealth": "Compared to other people your age, how would you describe your mental health?"
   },
-  "Other / Uncategorized": {
-    "cps21_demsat": "On the whole, how satisfied are you with the way democracy works in Canada?",
-    "cps21_comfort1": "For those certian or likely to vote, Regardless of how you plan to vote, how comfortable are you with the idea of voting in person during the coronavirus (COVID-19) pandemic?",
-    "cps21_comfort2": "For those unlikely to vote, If you decide to vote, how comfortable are you with the idea of voting  in person during the coronavirus (COVID-19) pandemic?",
-    "cps21_comfort3": "For those already voted, Regardless of how you voted, how comfortable were you with the idea  of voting in person during the coronavirus (COVID-19) pandemic?",
-    "cps21_vote_unlikely": "For Canadians unlikely to vote, If you decide to vote, which party do you think you will vote for?",
-    "cps21_vote_unlike_pr": "For non Canadian citizens that don't know how likely to vote they are to vote, If you could vote in this election, and decided to vote, which party do you think you would vote for?",
-    "cps21_2nd_choice": "For those certain or likely to vote, And which party would be your second choice?",
-    "cps21_2nd_choice_pr": "For those uneligible but certain or likely to vote if become Canadian citizen, And which party would be your second choice?",
-    "cps21_not_vote_for_1": "Are there any parties that you would absolutely not vote for? (Select all that apply)",
-    "cps21_not_vote_for_w_1": "Why would you not vote for this party/these parties? (Select all that apply)",
-    "cps21_lr_scale_bef_1": "Using the same scale where 0 means the left and 10 means the right, where would you place yourself on this scale?",
+  "Democracy & Governance": {
+    "cps21_demsat": "Overall satisfaction with democracy in Canada?",
+    "pes21_dem_sat": "Are you satisfied with democracy in Canada?",
+    "pes21_formgovt": "What should be more important in forming government?",
+    "pes21_keepromises": "Do political parties keep promises?",
+    "pes21_senate": "The Senate should be abolished.",
+    "pes21_losetouch": "MPs lose touch with the people.",
+    "pes21_govtcare": "Government does not care about people like me.",
+    "cps21_pol_eth": "It is important that politicians behave ethically in office."
+  },
+  "Election Forecasts": {
     "cps21_most_seats_1": "For each of the parties below, how likely is each party to win the most seats in the House of Commons? - Liberal Party",
     "cps21_most_seats_2": "For each of the parties below, how likely is each party to win the most seats in the House of Commons? - Conservative Party",
     "cps21_most_seats_3": "For each of the parties below, how likely is each party to win the most seats in the House of Commons? - NDP",
@@ -338,37 +348,18 @@
     "cps21_win_local_2": "For each of the parties below, how likely is each party to win the seat in your own local riding? - Conservative Party",
     "cps21_win_local_3": "For each of the parties below, how likely is each party to win the seat in your own local riding? - NDP",
     "cps21_win_local_4": "For each of the parties below, how likely is each party to win the seat in your own local riding? - Bloc Québécois",
-    "cps21_win_local_5": "For each of the parties below, how likely is each party to win the seat in your own local riding? - Green Party",
-    "cps21_imm": "Do you think Canada should admit:",
-    "cps21_refugees": "Do you think Canada should admit:",
-    "cps21_pol_eth": "It is important that politicians behave ethically in office.",
+    "cps21_win_local_5": "For each of the parties below, how likely is each party to win the seat in your own local riding? - Green Party"
+  },
+  "Political Knowledge": {
     "cps21_finmin_name": "What is the name of the federal Minister of Finance?",
-    "cps21_govgen_name": "What is the name of the Governor-General of Canada?",
-    "cps21_own_fin_retro": "Over the past year, has your financial situation:",
-    "cps21_ownfinanc_fed": "Have the policies of the federal government made your financial situation...",
-    "cps21_own_fin_future": "Over the next year, do you think your financial situation will:",
-    "cps21_residential_2a": "Accelerate progress on the calls to action from the truth and reconciliation commission.",
-    "cps21_residential_2b": "Federal government funding to identify unmarked graves at all former residential schools.",
-    "cps21_residential_2c": "All governments ceasing court actions against residential school survivors and first nations children.",
-    "cps21_residential_2d": "Renaming buildings and institutions that are named for people who built or ran parts of the residential school system.",
-    "cps21_rel_imp": "In your life, you would say religion is:",
-    "cps21_property_1": "Do you or a member of your household own a residence (for example, a home or an apartment), own a business (for example, a piece of property, a farm, or livestock), have stocks or bonds, or have savings? Please check all that apply.",
-    "cps21_property_2": "Do you or a member of your household own a residence (for example, a home or an apartment), own a business (for example, a piece of property, a farm, or livestock), have stocks or bonds, or have savings? Please check all that apply.",
-    "cps21_property_3": "Do you or a member of your household own a residence (for example, a home or an apartment), own a business (for example, a piece of property, a farm, or livestock), have stocks or bonds, or have savings? Please check all that apply.",
-    "cps21_property_4": "Do you or a member of your household own a residence (for example, a home or an apartment), own a business (for example, a piece of property, a farm, or livestock), have stocks or bonds, or have savings? Please check all that apply.",
-    "cps21_property_5": "Do you or a member of your household own a residence (for example, a home or an apartment), own a business (for example, a piece of property, a farm, or livestock), have stocks or bonds, or have savings? Please check all that apply.",
-    "cps21_property_6": "Do you or a member of your household own a residence (for example, a home or an apartment), own a business (for example, a piece of property, a farm, or livestock), have stocks or bonds, or have savings? Please check all that apply.",
+    "cps21_govgen_name": "What is the name of the Governor-General of Canada?"
+  },
+  "Other / Uncategorized": {
     "Q145": "Specifically regarding your mail-in ballot, how easy or difficult was it for you to find the information you needed to complete the mail-in ballot?",
-    "pes21_resason_chose": "What was the most important reason for choosing this party?",
+    "pes21_reason_chose": "What was the most important reason for choosing this party?",
     "pes21_when_decide": "When did you decide that you were going to vote for this party?",
-    "pes21_dem_sat": "On the whole, are you very satisfied, fairly satisfied, not very satisfied,or not satisfied at all with the way democracy works in Canada?",
-    "pes21_formgovt": "Which should be more important to forming the government in Canada:",
-    "pes21_keepromises": "Do political parties keep their election promises?",
     "pes21_paymed": "People who are willing to pay should be allowed to get medical treatment sooner.",
-    "pes21_senate": "The Senate should be abolished.",
-    "pes21_losetouch": "Those elected to Parliament soon lose touch with the people",
     "pes21_hatespeech": "It should be illegal to say hateful things publicly about racial, ethnic and religious groups.",
-    "pes21_govtcare": "The government does not care much about what people like me think.",
     "pes21_internetregis": "To complete voter registration online, electors must provide their date of birth, home address, and driver’s license number on Elections Canada’s website. How comfortable are you with providing this information online to Elections Canada?",
     "pes21_internetrisk1": "Which statement comes closest to your own view?",
     "pes21_internetrisk2": "Which statement comes closest to your own view?",
