@@ -13,6 +13,7 @@
     "cps21_two_spirit": "Are you Two-Spirit?",
     "cps21_sexuality": "Which of the following best represents how you think of yourself?",
     "cps21_language_1": "Which language(s) did you learn as a child and still understand today? (Select all that apply)",
+    "pes21_lang": "Which language do you usually speak at home?",
     "cps21_employment": "What is your employment status? Are you currently…",
     "cps21_union": "Do you belong to a union?",
     "cps21_children": "How many children, if any, do you have?",
@@ -59,6 +60,8 @@
     "pes21_notvotereason1": "For those that didn't vote, What is the main reason you did not vote?",
     "pes21_howvote": "There are many options for people wanting to vote in an election. How did you vote?",
     "pes21_votechoice2021": "Which party did you vote for?",
+    "pes21_reason_chose": "What was the most important reason for choosing this party?",
+    "pes21_when_decide": "When did you decide that you were going to vote for this party?",
     "pes21_pr_votechoice": "For those who couldn't vote, If you could have voted in the federal election on Sept. 20, which party would you have voted for?",
     "pes21_lowturnout": "Low voter turnout weakens Canadian democracy.",
     "cps21_vote_unlikely": "For Canadians unlikely to vote, If you decide to vote, which party do you think you will vote for?",
@@ -98,7 +101,11 @@
     "cps21_lr_parties_7": "In politics, people sometimes talk of left and right. Where would you place the federal political parties on a scale from 0 to 10 where 0 means the left and 10 means the right? - People’s Party of Canada",
     "cps21_lr_scale_bef_1": "Using the same scale where 0 means the left and 10 means the right, where would you place yourself on this scale?",
     "cps21_pos_mailtrust": "Voting by mail is equally as trustworthy as voting in person.",
+    "pes_maileasy": "For voters by mail, Did you find the process of requesting a mail-in ballot and voting by mail easy or difficult?",
+    "pes_maildifficult_1": "For those that found mail difficult, What made the process of voting by mail difficult? (Select all that apply)",
+    "Q145": "Specifically regarding your mail-in ballot, how easy or difficult was it for you to find the information you needed to complete the mail-in ballot?",
     "cps21_pos_fptp": "Canada should change its electoral system from “First Past the Post to a “proportional representation” system.",
+    "pes21_paymed": "People who are willing to pay should be allowed to get medical treatment sooner.",
     "cps21_pos_life": "Individuals who are terminally ill should be allowed to end their lives with the assistance of a doctor.",
     "cps21_pos_cannabis": "Possession of cannabis should be a criminal offence.",
     "cps21_pos_carbon": "To help reduce greenhouse gas emissions, the federal government should continue the carbon tax.",
@@ -153,6 +160,8 @@
     "pes21_hostile2": "Women seek to gain power by getting control over men.",
     "pes21_hostile4": "Women exaggerate problems they have at work.",
     "pes21_pos_carbon": "To help reduce greenhouse gas emissions, the federal government should continue the carbon tax.",
+    "pes21_cc1": "Do you think that climate change is happening?",
+    "pes21_cc2": "What do you think is the main cause of climate change?",
     "pes21_pos_energy": "The federal government should do more to help Canada’s energy sector, including building oil pipelines.",
     "pes21_newerlife": "Newer lifestyles are contributing to the breakdown of our society."
   },
@@ -184,8 +193,6 @@
     "cps21_vaccine2": "Are you eligible to be vaccinated?",
     "cps21_vaccine3": "Vaccination - Are you:",
     "pes21_votingsafe": "How safe did you feel voting in person?",
-    "pes_maileasy": "For voters by mail, Did you find the process of requesting a mail-in ballot and voting by mail easy or difficult?",
-    "pes_maildifficult_1": "For those that found mail difficult, What made the process of voting by mail difficult? (Select all that apply)",
     "cps21_comfort1": "For those certian or likely to vote, Regardless of how you plan to vote, how comfortable are you with the idea of voting in person during the coronavirus (COVID-19) pandemic?",
     "cps21_comfort2": "For those unlikely to vote, If you decide to vote, how comfortable are you with the idea of voting  in person during the coronavirus (COVID-19) pandemic?",
     "cps21_comfort3": "For those already voted, Regardless of how you voted, how comfortable were you with the idea  of voting in person during the coronavirus (COVID-19) pandemic?"
@@ -236,7 +243,12 @@
     "cps21_groupdiscrim_5": "How much discrimination is there in Canada against each of the following groups? - Men",
     "cps21_groupdiscrim_6": "How much discrimination is there in Canada against each of the following groups? - Gays and lesbians",
     "cps21_groupdiscrim_7": "How much discrimination is there in Canada against each of the following groups? - Transgender people",
-    "cps21_groupdiscrim_8": "How much discrimination is there in Canada against each of the following groups? - White people"
+    "cps21_groupdiscrim_8": "How much discrimination is there in Canada against each of the following groups? - White people",
+    "pes21_hatespeech": "It should be illegal to say hateful things publicly about racial, ethnic and religious groups.",
+    "pes21_donerm": "How much do you think should be done for racial minorities?",
+    "pes21_donew": "How much do you think should be done for women?",
+    "pes21_donegl": "How much do you think should be done for gays and lesbians?",
+    "pes21_doneqc": "How much do you think should be done for Quebec?"
   },
   "Party ID": {
     "cps21_fed_id": "In federal politics, do you usually think of yourself as a:",
@@ -355,23 +367,11 @@
     "cps21_govgen_name": "What is the name of the Governor-General of Canada?"
   },
   "Other / Uncategorized": {
-    "Q145": "Specifically regarding your mail-in ballot, how easy or difficult was it for you to find the information you needed to complete the mail-in ballot?",
-    "pes21_reason_chose": "What was the most important reason for choosing this party?",
-    "pes21_when_decide": "When did you decide that you were going to vote for this party?",
-    "pes21_paymed": "People who are willing to pay should be allowed to get medical treatment sooner.",
-    "pes21_hatespeech": "It should be illegal to say hateful things publicly about racial, ethnic and religious groups.",
     "pes21_internetregis": "To complete voter registration online, electors must provide their date of birth, home address, and driver’s license number on Elections Canada’s website. How comfortable are you with providing this information online to Elections Canada?",
     "pes21_internetrisk1": "Which statement comes closest to your own view?",
     "pes21_internetrisk2": "Which statement comes closest to your own view?",
     "pes21_provvote": "If a provincial election were held today in your province, which party would you vote for?",
     "pes21_womenparl": "The best way to protect women's interests is to have more women in Parliament.",
-    "pes21_donerm": "How much do you think should be done for racial minorities?",
-    "pes21_donew": "How much do you think should be done for women?",
-    "pes21_donegl": "How much do you think should be done for gays and lesbians?",
-    "pes21_doneqc": "How much do you think should be done for Quebec?",
-    "pes21_cc1": "Do you think that climate change is happening?",
-    "pes21_cc2": "What do you think is the main cause of climate change?",
-    "pes21_service_freq": "How often do you attend religious services, excluding special occasions such as weddings and funerals?",
-    "pes21_lang": "Which language do you usually speak at home?"
+    "pes21_service_freq": "How often do you attend religious services, excluding special occasions such as weddings and funerals?"
   }
 }
