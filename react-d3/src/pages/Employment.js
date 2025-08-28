@@ -20,7 +20,7 @@ function Employment() {
       {/* Section 1: Monthly Labour Force */}
       <section className="mb-5">
         <div className="text-center mb-4">
-          <h2 className="fw-bold fs-3">📊 May 2025 Labour Force (Seasonally Adjusted)</h2>
+          <h2 className="fw-bold fs-3">📊 July 2025 Labour Force (Seasonally Adjusted)</h2>
           <p className="text-muted fs-6">
             Visualized by age group using Statistics Canada data
           </p>

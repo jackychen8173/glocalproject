@@ -5,7 +5,7 @@ function LabourChartsMonthly() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("./cleaned_labour_data_monthly_may2025.json")
+    fetch("./cleaned_labour_data_monthly_july2025.json")
       .then((res) => res.json())
       .then(setData);
   }, []);

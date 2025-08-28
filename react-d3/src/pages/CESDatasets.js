@@ -56,7 +56,7 @@ function CESDatasets() {
         <CES2021Footer />
       </section>
 
-      {/* Section 2: CES 2019 */}
+      {/* Section 2: CES 2019 
       <section className="mb-5">
         <CES2019Online />
         <footer
@@ -87,6 +87,7 @@ function CESDatasets() {
           </div>
         </footer>
       </section>
+      */}
     </div>
   );
 }
