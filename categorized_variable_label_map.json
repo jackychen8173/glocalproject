@@ -341,13 +341,13 @@
     "pes21_mhealth": "Compared to other people your age, how would you describe your mental health?"
   },
   "Democracy & Governance": {
-    "cps21_demsat": "Overall satisfaction with democracy in Canada?",
-    "pes21_dem_sat": "Are you satisfied with democracy in Canada?",
-    "pes21_formgovt": "What should be more important in forming government?",
-    "pes21_keepromises": "Do political parties keep promises?",
+    "cps21_demsat": "On the whole, how satisfied are you with the way democracy works in Canada?",
+    "pes21_dem_sat": "On the whole, are you very satisfied, fairly satisfied, not very satisfied,or not satisfied at all with the way democracy works in Canada?",
+    "pes21_formgovt": "Which should be more important to forming the government in Canada:",
+    "pes21_keepromises": "Do political parties keep their election promises?",
     "pes21_senate": "The Senate should be abolished.",
-    "pes21_losetouch": "MPs lose touch with the people.",
-    "pes21_govtcare": "Government does not care about people like me.",
+    "pes21_losetouch": "Those elected to Parliament soon lose touch with the people.",
+    "pes21_govtcare": "The government does not care much about what people like me think.",
     "cps21_pol_eth": "It is important that politicians behave ethically in office."
   },
   "Election Forecasts": {
