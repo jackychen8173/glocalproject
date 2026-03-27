@@ -1,46 +1,61 @@
 import EducationParticipationRate from "../components/EducationParticipationRate";
 import UndergradPersistenceGraduation from "../components/UndergradPersistenceGraduation";
+import "../components/DataVisualization.css";
 
 function Education() {
   return (
-    <div className="container py-5">
+    <div className="data-viz-container">
       {/* Page Header */}
-      <div className="mb-5 text-center">
-        <h1 className="display-4 fw-bold text-primary">
-          📚 Canadian Education Insights
-        </h1>
-        <p className="text-muted fs-5 mt-3">
-          Double-click or drag a box on any graph to zoom in for a closer view.
-        </p>
+      <div className="page-header">
+        <div className="page-header-content">
+          <h1 className="page-title">
+            📚 Canadian Education Insights
+          </h1>
+          <p className="page-subtitle">
+            Explore participation rates, persistence, and graduation trends across Canadian educational institutions
+          </p>
+          <div className="page-note">
+            <span>💡</span>
+            <span>Double-click or drag on any graph to zoom in for detailed analysis</span>
+          </div>
+        </div>
       </div>
 
       {/* Section 1: Participation Rate */}
-      <section className="mb-5">
-        <div className="text-center mb-4">
-          <h2 className="fw-bold fs-3">🎓 Participation Rate in Education</h2>
-          <p className="text-muted fs-6">
-            View by age group and institution type across Canada
+      <section className="section-card">
+        <div className="section-card-header">
+          <h2 className="section-card-title">
+            <span>🎓</span>
+            <span>Participation Rate in Education</span>
+          </h2>
+          <p className="section-card-subtitle">
+            Track educational participation by age group and institution type across Canada (2006-2024)
           </p>
         </div>
         <EducationParticipationRate />
-        <footer className="text-center text-muted mt-3" style={{ fontSize: "0.9rem" }}>
-          Source: Statistics Canada, Table 37-10-0103-01
-        </footer>
       </section>
 
+      <footer className="viz-footer">
+        <strong>Source:</strong> Statistics Canada, Table 37-10-0103-01
+      </footer>
+
       {/* Section 2: Undergrad Persistence */}
-      <section>
-        <div className="text-center mb-4">
-          <h2 className="fw-bold fs-3">📈 Undergraduate Persistence & Graduation</h2>
-          <p className="text-muted fs-6">
-            Canadian students aged 15-19 years, Persistence rates after 1 & 2 years, plus graduation within 4, 6, and 8 years
+      <section className="section-card">
+        <div className="section-card-header">
+          <h2 className="section-card-title">
+            <span>📈</span>
+            <span>Undergraduate Persistence & Graduation</span>
+          </h2>
+          <p className="section-card-subtitle">
+            Canadian students aged 15-19 years: Persistence rates after 1 & 2 years, plus graduation within 4, 6, and 8 years
           </p>
         </div>
         <UndergradPersistenceGraduation />
-        <footer className="text-center text-muted mt-3" style={{ fontSize: "0.9rem" }}>
-          Source: Statistics Canada, Table 37-10-0136-03
-        </footer>
       </section>
+
+      <footer className="viz-footer">
+        <strong>Source:</strong> Statistics Canada, Table 37-10-0136-03
+      </footer>
     </div>
   );
 }

@@ -1,50 +1,63 @@
 import React from "react";
-import Plot from "react-plotly.js";
 import LabourForcePlotByAgeGroup from "../components/LabourForcePlotByAgeGroup";
 import LabourChartsMonthly from "../components/LabourChartsMonthly";
-import LabourDataByAPI from "../components/LabourDataByAPI";
+import "../components/DataVisualization.css";
 
 function Employment() {
   return (
-    <div className="container py-5">
+    <div className="data-viz-container">
       {/* Page Header */}
-      <div className="mb-5 text-center">
-        <h1 className="display-4 fw-bold text-success">
-          💼 Canadian Employment Trends
-        </h1>
-        <p className="text-muted fs-5 mt-3">
-          Double-click or drag to zoom in on the graph for a closer view.
-        </p>
+      <div className="page-header">
+        <div className="page-header-content">
+          <h1 className="page-title">
+            💼 Canadian Employment Trends
+          </h1>
+          <p className="page-subtitle">
+            Analyze labour force statistics, employment rates, and workforce trends by age group
+          </p>
+          <div className="page-note">
+            <span>💡</span>
+            <span>Double-click or drag to zoom in on the graph for detailed analysis</span>
+          </div>
+        </div>
       </div>
 
       {/* Section 1: Monthly Labour Force */}
-      <section className="mb-5">
-        <div className="text-center mb-4">
-          <h2 className="fw-bold fs-3">📊 July 2025 Labour Force (Seasonally Adjusted)</h2>
-          <p className="text-muted fs-6">
-            Visualized by age group using Statistics Canada data
+      <section className="section-card">
+        <div className="section-card-header">
+          <h2 className="section-card-title">
+            <span>📊</span>
+            <span>July 2025 Labour Force (Seasonally Adjusted)</span>
+          </h2>
+          <p className="section-card-subtitle">
+            Current labour market snapshot visualized by age group using Statistics Canada data
           </p>
         </div>
         <LabourChartsMonthly />
-        <footer className="text-center text-muted mt-3" style={{ fontSize: "0.9rem" }}>
-          Source: Statistics Canada, Table 14-10-0287-02
-        </footer>
       </section>
+
+      <footer className="viz-footer">
+        <strong>Source:</strong> Statistics Canada, Table 14-10-0287-02
+      </footer>
 
       {/* Section 2: Labour Force By Age Group */}
-      <section className="mb-5">
-        <div className="text-center mb-4">
-          <h2 className="fw-bold fs-3">👥 Labour Force Trends by Age Group</h2>
+      <section className="section-card">
+        <div className="section-card-header">
+          <h2 className="section-card-title">
+            <span>👥</span>
+            <span>Labour Force Trends by Age Group</span>
+          </h2>
+          <p className="section-card-subtitle">
+            Historical trends showing how employment patterns evolve across different age demographics
+          </p>
         </div>
         <LabourForcePlotByAgeGroup />
-        <footer className="text-center text-muted mt-3" style={{ fontSize: "0.9rem" }}>
-          Source: Statistics Canada, Table 14-10-0327-01
-        </footer>
       </section>
 
+      <footer className="viz-footer">
+        <strong>Source:</strong> Statistics Canada, Table 14-10-0327-01
+      </footer>
     </div>
-
-    
   );
 }
 
