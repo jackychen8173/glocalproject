@@ -5848,12 +5848,12 @@
     "3: Not very comfortable": 1013,
     "5: Don't know/ Prefer not to answer": 237
   },
-  "Which statement comes closest to your own view?": {
+  "Internet Risk 1 - Which statement comes closest to your own view?": {
     "1: Voting on the Internet is risky.": 3450,
     "2: Voting on the Internet is safe.": 2774,
     "3: Don't know/ Prefer not to answer": 1179
   },
-  "Which statement comes closest to your own view?.1": {
+  "Internet Risk 2 - Which statement comes closest to your own view?": {
     "1: Registering to vote on the Internet is risky.": 2486,
     "2: Registering to vote on the Internet is safe.": 3949,
     "3: Don't know/ Prefer not to answer": 968

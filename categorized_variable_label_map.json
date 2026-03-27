@@ -292,6 +292,9 @@
     "pes21_foreign": "How confident are you that our elections are safe from foreign interference",
     "pes21_emb_satif": "How satisfied are you with the way Elections Canada runs federal elections?",
     "pes21_emb8": "Thinking about this election, would you say that Elections Canada ran the election…",
+    "pes21_internetregis": "To complete voter registration online, electors must provide their date of birth, home address, and driver’s license number on Elections Canada’s website. How comfortable are you with providing this information online to Elections Canada?",
+    "pes21_internetrisk1": "Internet Risk 1 - Which statement comes closest to your own view?",
+    "pes21_internetrisk2": "Internet Risk 2 - Which statement comes closest to your own view?",
     "pes21_emb_register": "Did you receive a voter registration card in the mail?",
     "pes21_emb_card": "Was the information on your voter registration card correct?",
     "pes21_emb_register2": "Did you register to vote during the election?",
@@ -303,6 +306,7 @@
     "pes21_emb7_5": "Thinking about the recent election, how informed did you feel about the following elements of the voting process? - How to vote at an advance polling station",
     "pes21_emb_info": "How easy or difficult was it to find the information you needed to vote?",
     "pes21_embsatisfy": "Overall, how satisfied were you with your voting experience?",
+    "pes21_provvote": "If a provincial election were held today in your province, which party would you vote for?",
     "pes21_partymember": "Have you ever been a member of a provincial or federal political party?"
   },
   "Friends & Social Circles": {
@@ -367,10 +371,6 @@
     "cps21_govgen_name": "What is the name of the Governor-General of Canada?"
   },
   "Other / Uncategorized": {
-    "pes21_internetregis": "To complete voter registration online, electors must provide their date of birth, home address, and driver’s license number on Elections Canada’s website. How comfortable are you with providing this information online to Elections Canada?",
-    "pes21_internetrisk1": "Which statement comes closest to your own view?",
-    "pes21_internetrisk2": "Which statement comes closest to your own view?",
-    "pes21_provvote": "If a provincial election were held today in your province, which party would you vote for?",
     "pes21_womenparl": "The best way to protect women's interests is to have more women in Parliament.",
     "pes21_service_freq": "How often do you attend religious services, excluding special occasions such as weddings and funerals?"
   }
